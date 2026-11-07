@@ -70,7 +70,7 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
         </div>
       </div>
       </sc-if>
-      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Bookinger slutter 30 min. før du er tilbage, så pladsen altid er fri. Skøn ud fra 25 kr./time, 30 % belægning og din andel på 40 %.</p>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Bookinger slutter 30 min. før du er tilbage, så pladsen altid er fri. Skøn ud fra 20 kr./time, 30 % belægning og din andel på 40 %.</p>
     </section>
   </main>
 
@@ -107,9 +107,9 @@ class Component extends DCLogic {
   renderVals() {
     var MAX = 294;
     var opts = [
-      { id: 'k17', label: 'kl. 17', sub: 'Din normale tid', until: '16.30', earn: '25' },
-      { id: 'k22', label: 'I aften', sub: 'kl. 22', until: '21.30', earn: '40' },
-      { id: 'k7', label: 'I morgen', sub: 'kl. 7', until: '6.30', earn: '65' },
+      { id: 'k17', label: 'kl. 17', sub: 'Din normale tid', until: '16.30', earn: '20' },
+      { id: 'k22', label: 'I aften', sub: 'kl. 22', until: '21.30', earn: '30' },
+      { id: 'k7', label: 'I morgen', sub: 'kl. 7', until: '6.30', earn: '55' },
       { id: 'pick', label: 'Vælg tid', sub: 'Dato og klokkeslæt', until: '', earn: '' }
     ];
     var self = this;

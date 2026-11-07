@@ -29,7 +29,7 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
       <div style="display: flex; flex-direction: column; gap: 6px">
         <p style="margin: 0 0 4px; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px 0 10px; border-radius: 999px; background: #F5C518; color: #121417; font-size: 15px; font-weight: 600; line-height: 1.2">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
-          Billigste i området · 25 kr./t
+          Billigste i området · 20 kr./t
         </p>
         <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">P-kælder, Bernhardt Jensens Boulevard 87</h1>
         <p style="margin: 0; font-size: 15px; color: #4A4F57">8000 Aarhus Ø · 3 ledige pladser</p>
@@ -79,7 +79,7 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
 
     <footer style="padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #D9D5CC; background: #F3F1EC">
       <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
-        <span style="font-size: 15px; color: #4A4F57">{{hours}} t × 25 kr.</span>
+        <span style="font-size: 15px; color: #4A4F57">{{hours}} t × 20 kr.</span>
         <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15">{{total}} kr.</span>
       </div>
       <button type="button" onClick="{{pay}}" style="height: 52px; border: 0; border-radius: 8px; background: #1846C8; color: #FFFFFF; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Betal {{total}} kr.</button>
@@ -131,7 +131,7 @@ class Component extends DCLogic {
   renderVals() {
     var self = this;
     var h = this.state.hours;
-    var PRICE = 25;
+    var PRICE = 20;
     return {
       headerTitle: this.state.booked ? 'Din booking' : 'Book plads',
       hours: h,
