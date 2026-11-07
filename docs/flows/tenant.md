@@ -37,6 +37,6 @@ The tenant must always get a space.
 4. If no space is free at all: to decide (see open questions).
 
 ## T5. Earnings and payouts
-- "Du har tjent 550 kr. denne måned." (Matches the landing page example: about 550 kr. per tenant per month.)
+- "Du har tjent 440 kr. denne måned." (Matches the landing page example: about 440 kr. per tenant per month at 20 kr./hour.)
 - History per booking. Monthly payout to the tenant's bank account.
 - When the tenant moves out (owner flow O4), outstanding earnings are paid out.

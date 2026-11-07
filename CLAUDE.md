@@ -62,4 +62,4 @@ Remove the registrar's default parking A/CNAME records on `@` and `www`.
 - Signage must clearly state the parking terms and the camera surveillance. Camera data falls under GDPR.
 - Tenants usually may not sublet their space without the owner's consent; the owner agreement with ParkShare24 must provide that consent and adjust tenant contracts.
 - Precedent used in sales copy: Copenhagen Municipality rents about 2,400 private parking spaces that residents book via the Visitors app.
-- Example numbers used on the page (assumptions, not market data): 60 spaces, 6 empty hours/day, 30 % occupancy, 25 kr./hour → about 985,000 kr. revenue/year, about 197,000 kr. to the owner, about 550 kr./month per tenant.
+- Example numbers used on the page (assumptions, not market data): 60 spaces, 6 empty hours/day, 30 % occupancy, 20 kr./hour → about 788,000 kr. revenue/year, about 158,000 kr. to the owner (20 %), about 440 kr./month per tenant (40 %).
