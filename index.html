@@ -37,8 +37,8 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 
 <section id="top" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
 <div style="flex: 1 1 520px; min-width: 0">
-<p style="margin: 0 0 20px; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>For ejere af p-huse og p-kældre</p>
-<h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 72px); line-height: 1.02; letter-spacing: -0.03em">Jeres tomme p-pladser kan tjene penge.</h1>
+<p style="margin: 0 0 20px; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>For boligforeninger, udlejere og erhvervsejendomme</p>
+<h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(38px, 5vw, 60px); line-height: 1.04; letter-spacing: -0.03em; text-wrap: balance">Jeres p-pladser står tomme det meste af dagen. Lad dem tjene penge.</h1>
 <p style="margin: 28px 0 0; font-size: 20px; color: #4A4F57; max-width: 560px">ParkShare24 installerer kameraer og app, og driver det hele. Når pladserne står tomme, kan bilister booke dem – og indtægten deles mellem jer, jeres lejere og os.</p>
 <div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px">
 <a href="#beregner" style="background: #1846C8; color: #FFFFFF; text-decoration: none; padding: 14px 24px; border-radius: 8px; font-weight: 600; font-size: 17px">Beregn jeres potentiale</a>
@@ -92,7 +92,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 </div>
 <div style="border: 1px solid #D9D5CC; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
 <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 15px; color: #1846C8; letter-spacing: 0.04em; text-transform: uppercase">Lejerne</span>
-<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2">Betalt for en plads, de ikke bruger</h3>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2">Tjen penge på pladsen, når bilen er væk</h3>
 <p style="margin: 0; color: #4A4F57">Lejeren melder sin plads ledig i appen, når bilen er væk – og får den største andel af indtægten. Pladsen er altid deres, når de kommer hjem.</p>
 <p style="margin: 0; color: #4A4F57"><strong style="color: #121417; font-weight: 600">Gæster uden stress.</strong> Lejere kan booke en plads til venner og familie i appen. Gæsten kører bare ind på sin nummerplade.</p>
 </div>
@@ -607,7 +607,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #121417">Vores løfte til bilisterne</p>
 <p style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: #121417">Altid den billigste parkering i området.</p>
 </div>
-<p style="flex: 1 1 320px; min-width: 0; margin: 0; max-width: 420px; font-size: 17px; color: #121417">Prisen ligger under gadeparkering og p-huse i nærheden. Det giver bilisterne et ekstra incitament til at bruge appen.</p>
+<p style="flex: 1 1 320px; min-width: 0; margin: 0; max-width: 420px; font-size: 17px; color: #121417">Prisen ligger under gadeparkering og andre p-pladser i nærheden. Det giver bilisterne et ekstra incitament til at bruge appen.</p>
 </div>
 </section>
 
@@ -631,6 +631,10 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <input id="r-occ" type="range" min="5" max="80" step="5" value="30">
 </div>
 <div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><label for="r-vacant" style="color: #D5D8DD">Heraf pladser uden fast lejer</label><span style="font-weight: 600"><span id="o-vacant">0</span> %</span></div>
+<input id="r-vacant" type="range" min="0" max="100" step="5" value="0">
+</div>
+<div>
 <div style="display: flex; justify-content: space-between; gap: 12px"><label for="r-price" style="color: #D5D8DD">Timepris</label><span style="font-weight: 600"><span id="o-price">20</span> kr.</span></div>
 <input id="r-price" type="range" min="10" max="50" step="1" value="20">
 </div>
@@ -641,7 +645,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <div style="background: #F3F1EC; color: #121417; border-radius: 16px; padding: 32px">
 <div style="font-size: 15px; color: #4A4F57">Til ejendommen pr. år</div>
 <div style="font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(40px, 5vw, 60px); line-height: 1.05; letter-spacing: -0.02em"><span id="o-owner"></span></div>
-<div style="margin-top: 6px; font-size: 15px; color: #4A4F57">20 % af en omsætning ekskl. moms på <span id="o-revenue"></span></div>
+<div style="margin-top: 6px; font-size: 15px; color: #4A4F57"><span id="o-ownerPct">20 %</span> af en omsætning ekskl. moms på <span id="o-revenue"></span></div>
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
 <div style="background: #1E2227; border-radius: 14px; padding: 22px">
@@ -690,8 +694,8 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <p style="margin: 0; color: #4A4F57">Bookinger, belægning og udbetaling – samlet i et overblik, I kan dele med bestyrelsen.</p>
 </div>
 <div style="padding: 28px 28px 28px 0; border-bottom: 1px solid #D9D5CC">
-<h3 style="margin: 0 0 8px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Alle tre vinder</h3>
-<p style="margin: 0; color: #4A4F57">Lejeren tjener på en plads, der ellers stod tom, ejendommen får en ny indtægt, og bilisten får den billigste plads i området. Vores andel betaler kameraer, app og drift.</p>
+<h3 style="margin: 0 0 8px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Hjælp ved porten</h3>
+<p style="margin: 0; color: #4A4F57">Genkender kameraet ikke pladen, ringer bilisten til os. Vi tjekker bookingen og åbner porten på afstand.</p>
 </div>
 </div>
 </section>
@@ -715,7 +719,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 </details>
 <details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
 <summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Hvad koster det os?</summary>
-<p style="margin: 12px 0 0; color: #4A4F57">Intet. ParkShare24 betaler kameraer, skilte, app, installation og drift. Vi tjener kun, når der kommer bookinger.</p>
+<p style="margin: 12px 0 0; color: #4A4F57">Ingen udgifter. ParkShare24 betaler kameraer, skilte, app, installation og drift. Vi tjener kun, når der kommer bookinger.</p>
 </details>
 <details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
 <summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Hvad med sikkerheden i kælderen?</summary>
@@ -727,7 +731,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 </details>
 <details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
 <summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Må lejerne udleje deres plads?</summary>
-<p style="margin: 12px 0 0; color: #4A4F57">Det kræver ejendommens accept, og det er netop det, aftalen med ParkShare24 giver. Vi hjælper med at tilpasse vilkårene i lejekontrakterne.</p>
+<p style="margin: 12px 0 0; color: #4A4F57">Det kræver ejendommens accept, og det er netop det, aftalen med ParkShare24 giver. I almene boliger skal afdelingsmødet også godkende det. Vi hjælper med at tilpasse vilkårene i lejekontrakterne.</p>
 </details>
 </div>
 </section>
@@ -760,7 +764,6 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <label for="f-type" style="font-size: 14px; font-weight: 600">Type anlæg</label>
 <select id="f-type" name="type" style="height: 48px; padding: 0 14px; border: 1px solid #B9B4A9; border-radius: 8px; font: inherit; background: #FFFFFF">
 <option>P-kælder i boligejendom</option>
-<option>P-hus</option>
 <option>Kontor- eller erhvervsejendom</option>
 <option>Andet</option>
 </select>
@@ -780,17 +783,21 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 </div>
 <script>
 (function(){
-  var ids=['spaces','hours','occ','price'];
+  var ids=['spaces','hours','occ','vacant','price'];
   function kr(n){return Math.round(n).toLocaleString('da-DK')+' kr.';}
   function v(k){return Number(document.getElementById('r-'+k).value);}
   function calc(){
     ids.forEach(function(k){document.getElementById('o-'+k).textContent=v(k);});
     // Prices are incl. VAT; the split is of revenue excl. VAT (25 %).
     var rev=v('spaces')*v('hours')*(v('occ')/100)*v('price')*365/1.25;
+    // Spaces with a tenant: tenant 40 %, owner 20 %. Without a tenant: owner 60 %.
+    var vac=v('vacant')/100, ten=1-vac;
+    var owner=rev*(ten*0.2+vac*0.6), tenants=rev*ten*0.4, tenantSpaces=v('spaces')*ten;
     document.getElementById('o-revenue').textContent=kr(rev);
-    document.getElementById('o-owner').textContent=kr(rev*0.2);
-    document.getElementById('o-tenants').textContent=kr(rev*0.4);
-    document.getElementById('o-perTenant').textContent=kr(rev*0.4/v('spaces')/12);
+    document.getElementById('o-ownerPct').textContent=Math.round((ten*0.2+vac*0.6)*100)+' %';
+    document.getElementById('o-owner').textContent=kr(owner);
+    document.getElementById('o-tenants').textContent=kr(tenants);
+    document.getElementById('o-perTenant').textContent=tenantSpaces>0?kr(tenants/tenantSpaces/12):'–';
   }
   ids.forEach(function(k){document.getElementById('r-'+k).addEventListener('input',calc);});
   calc();
