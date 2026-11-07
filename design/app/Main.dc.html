@@ -27,11 +27,23 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
     </button>
   </header>
 
-  <div style="margin: 0 16px; height: 148px; background: #B9B4A9; border-radius: 14px; position: relative; overflow: hidden; display: flex; align-items: flex-end; justify-content: center" aria-hidden="true">
-    <span style="position: absolute; left: 72px; top: 0; bottom: 0; width: 6px; background: #FFFFFF"></span>
-    <span style="position: absolute; right: 72px; top: 0; bottom: 0; width: 6px; background: #FFFFFF"></span>
-    <span style="position: absolute; left: 50%; top: 18px; width: 120px; height: 10px; margin-left: -60px; border-radius: 3px; background: #F5C518"></span>
-    <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 64px; line-height: 1; letter-spacing: -0.02em; color: #FFFFFF; margin-bottom: 24px">47</span>
+  <div style="margin: 0 16px; height: 116px; background: #B9B4A9; border-radius: 14px; overflow: hidden; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr))" role="img" aria-label="Plads 47 står tom mellem to parkerede biler">
+    <div style="position: relative; border-right: 4px solid #FFFFFF; display: flex; justify-content: center; padding-top: 12px">
+      <div style="width: 58px; height: 96px; border-radius: 16px 16px 12px 12px; background: #4A4F57; position: relative">
+        <span style="position: absolute; left: 7px; right: 7px; top: 16px; height: 20px; border-radius: 6px 6px 3px 3px; background: #2E3238"></span>
+        <span style="position: absolute; left: 9px; right: 9px; bottom: 10px; height: 12px; border-radius: 3px; background: #2E3238"></span>
+      </div>
+    </div>
+    <div style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 14px; background: #C9C5BB">
+      <span style="position: absolute; left: 50%; top: 10px; width: 64px; height: 8px; margin-left: -32px; border-radius: 3px; background: #F5C518"></span>
+      <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: #FFFFFF">47</span>
+    </div>
+    <div style="position: relative; border-left: 4px solid #FFFFFF; display: flex; justify-content: center; padding-top: 12px">
+      <div style="width: 58px; height: 96px; border-radius: 16px 16px 12px 12px; background: #6B7078; position: relative">
+        <span style="position: absolute; left: 7px; right: 7px; top: 16px; height: 20px; border-radius: 6px 6px 3px 3px; background: #4A4F57"></span>
+        <span style="position: absolute; left: 9px; right: 9px; bottom: 10px; height: 12px; border-radius: 3px; background: #4A4F57"></span>
+      </div>
+    </div>
   </div>
 
   <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 22px; padding: 22px 16px 0">
@@ -69,8 +81,18 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
           <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; color: #1846C8">{{earn}} kr.</span>
         </div>
       </div>
+      <div style="display: flex; flex-direction: column; gap: 6px" role="img" aria-label="Delt fra kl. 8.12 til kl. {{until}}, derefter 30 minutters buffer, tilbage kl. {{back}}">
+        <div style="display: flex; height: 12px; border-radius: 999px; overflow: hidden; gap: 2px">
+          <span style="flex: {{shareFlex}} 1 0; background: #F5C518"></span>
+          <span style="flex: {{bufferFlex}} 1 0; min-width: 14px; background: #B9B4A9"></span>
+        </div>
+        <div style="display: flex; justify-content: space-between; gap: 8px; font-size: 13px; line-height: 1.4; color: #4A4F57">
+          <span>Nu, kl. 8.12</span>
+          <span>30 min. buffer · tilbage kl. {{back}}</span>
+        </div>
+      </div>
       </sc-if>
-      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Bookinger slutter 30 min. før du er tilbage, så pladsen altid er fri. Skøn ud fra 20 kr./time, 30 % belægning og din andel på 40 %.</p>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Skøn ud fra 20 kr./time, 30 % belægning og din andel på 40 %.</p>
     </section>
   </main>
 
@@ -107,10 +129,10 @@ class Component extends DCLogic {
   renderVals() {
     var MAX = 294;
     var opts = [
-      { id: 'k17', label: 'kl. 17', sub: 'Din normale tid', until: '16.30', earn: '20' },
-      { id: 'k22', label: 'I aften', sub: 'kl. 22', until: '21.30', earn: '30' },
-      { id: 'k7', label: 'I morgen', sub: 'kl. 7', until: '6.30', earn: '55' },
-      { id: 'pick', label: 'Vælg tid', sub: 'Dato og klokkeslæt', until: '', earn: '' }
+      { id: 'k17', label: 'kl. 17', sub: 'Din normale tid', until: '16.30', earn: '20', back: '17', share: 8.3 },
+      { id: 'k22', label: 'I aften', sub: 'kl. 22', until: '21.30', earn: '30', back: '22', share: 13.3 },
+      { id: 'k7', label: 'I morgen', sub: 'kl. 7', until: '6.30', earn: '55', back: '7', share: 22.3 },
+      { id: 'pick', label: 'Vælg tid', sub: 'Dato og klokkeslæt', until: '', earn: '', back: '', share: 1 }
     ];
     var self = this;
     var cur = opts.filter(function (o) { return o.id === self.state.picked; })[0];
@@ -128,6 +150,9 @@ class Component extends DCLogic {
       options: options,
       until: cur.until,
       earn: cur.earn,
+      back: cur.back,
+      shareFlex: String(cur.share),
+      bufferFlex: '0.5',
       shared: this.state.shared,
       notShared: !this.state.shared,
       hasTime: cur.id !== 'pick',
