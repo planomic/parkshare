@@ -121,7 +121,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <li style="padding: 28px 24px 8px 0; display: flex; flex-direction: column; gap: 10px">
 <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #1846C8">03</span>
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Pladser meldes ledige</h3>
-<p style="margin: 0; color: #4A4F57">I vælger tidsrummene, fx aften, nat og weekend. Lejere kan selv melde deres plads ledig i appen.</p>
+<p style="margin: 0; color: #4A4F57">Lejerne bestemmer selv, hvornår deres plads deles, fx når de kører ud. Pladser uden fast lejer kan I åbne i faste tidsrum.</p>
 </li>
 <li style="padding: 28px 24px 8px 0; display: flex; flex-direction: column; gap: 10px">
 <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #1846C8">04</span>
@@ -129,6 +129,114 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <p style="margin: 0; color: #4A4F57">Bilister booker og betaler på forhånd i appen. Hver måned får I og lejerne jeres andel udbetalt.</p>
 </li>
 </ol>
+</section>
+
+<section id="porten" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 96px">
+<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57">Teknikken</p>
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.02em; max-width: 760px">Sådan åbner porten.</h2>
+<p style="margin: 20px 0 0; max-width: 640px; color: #4A4F57">Kameraet læser nummerpladen, og en lille computer i et aflåst skab på stedet åbner porten for dem, der har en booking eller en plads. Ingen app kan åbne porten alene.</p>
+<div style="margin-top: 48px; display: flex; flex-direction: column; gap: 32px">
+<!-- drawing:Gate -->
+<div style="overflow-x: auto; border-radius: 14px"><svg viewBox="0 0 1168 420" style="display: block; width: 100%; min-width: 640px; height: auto" role="img" aria-label="En bil kører hen mod porten. Kameraet over porten læser nummerpladen AB 12 345. Gatewayen i skabet tjekker bookingen og sender et signal via relæet, og bommen går op.">
+    <!-- wall and floor -->
+    <rect x="0" y="0" width="1168" height="340" fill="#E7E3DA"></rect>
+    <rect x="0" y="340" width="1168" height="80" fill="#B9B4A9"></rect>
+    <rect x="0" y="336" width="1168" height="6" fill="#121417" opacity="0.15"></rect>
+    <!-- lane marking -->
+    <rect x="60" y="372" width="90" height="6" rx="3" fill="#FFFFFF"></rect>
+    <rect x="200" y="372" width="90" height="6" rx="3" fill="#FFFFFF"></rect>
+    <rect x="340" y="372" width="90" height="6" rx="3" fill="#FFFFFF"></rect>
+
+    <!-- entrance opening behind the barrier -->
+    <rect x="780" y="70" width="300" height="270" fill="#2E3238"></rect>
+    <rect x="780" y="62" width="300" height="12" fill="#121417"></rect>
+    <text x="1000" y="52" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="20" fill="#121417">P · KÆLDER B</text>
+
+    <!-- camera beam to the plate -->
+    <polygon points="705,124 552,252 552,290 709,134" fill="#1846C8" opacity="0.16"></polygon>
+    <!-- camera on its arm, lens pointing down at the plate -->
+    <rect x="742" y="110" width="40" height="6" fill="#4A4F57"></rect>
+    <g transform="translate(728,118) rotate(-25) scale(0.7)">
+      <rect x="-28" y="-13" width="56" height="26" rx="6" fill="#FFFFFF" stroke="#121417" stroke-width="2"></rect>
+      <rect x="-38" y="-8" width="12" height="16" rx="3" fill="#121417"></rect>
+      <circle cx="-34" cy="0" r="4" fill="#1846C8"></circle>
+    </g>
+
+    <!-- barrier: post, raised arm, ghost of closed arm -->
+    <line x1="788" y1="236" x2="560" y2="236" stroke="#121417" stroke-width="3" stroke-dasharray="6 8" opacity="0.35"></line>
+    <path d="M 640 236 A 150 150 0 0 1 742 110" fill="none" stroke="#121417" stroke-width="2" stroke-dasharray="4 6" opacity="0.45"></path>
+    <g transform="translate(788,236) rotate(-72)">
+      <rect x="0" y="-7" width="230" height="14" rx="4" fill="#FFFFFF" stroke="#121417" stroke-width="2"></rect>
+      <rect x="40" y="-7" width="26" height="14" fill="#C8102E"></rect>
+      <rect x="106" y="-7" width="26" height="14" fill="#C8102E"></rect>
+      <rect x="172" y="-7" width="26" height="14" fill="#C8102E"></rect>
+    </g>
+    <rect x="770" y="226" width="40" height="114" rx="4" fill="#121417"></rect>
+    <circle cx="790" cy="236" r="9" fill="#F5C518"></circle>
+
+    <!-- car, driving right -->
+    <g transform="translate(250,192)">
+      <path d="M 20 70 L 40 34 Q 52 12 80 10 L 196 10 Q 222 12 238 34 L 262 70 Z" fill="#4A4F57"></path>
+      <path d="M 66 38 Q 76 22 92 22 L 140 22 L 140 58 L 54 58 Z" fill="#C3C7CD"></path>
+      <path d="M 152 22 L 194 22 Q 212 24 224 40 L 236 58 L 152 58 Z" fill="#C3C7CD"></path>
+      <rect x="0" y="64" width="300" height="54" rx="18" fill="#4A4F57"></rect>
+      <rect x="284" y="76" width="16" height="12" rx="3" fill="#F5C518"></rect>
+      <circle cx="70" cy="122" r="26" fill="#121417"></circle>
+      <circle cx="70" cy="122" r="11" fill="#C3C7CD"></circle>
+      <circle cx="236" cy="122" r="26" fill="#121417"></circle>
+      <circle cx="236" cy="122" r="11" fill="#C3C7CD"></circle>
+    </g>
+    <!-- front plate, seen from the camera -->
+    
+
+    <!-- plate callout -->
+    <line x1="552" y1="280" x2="600" y2="190" stroke="#1846C8" stroke-width="2"></line>
+    <g transform="translate(470,140)">
+      <rect x="0" y="0" width="200" height="50" rx="8" fill="#FFFFFF" stroke="#1846C8" stroke-width="3"></rect>
+      <rect x="10" y="10" width="180" height="30" rx="4" fill="#FFFFFF" stroke="#C8102E" stroke-width="2"></rect>
+      <rect x="10" y="10" width="16" height="30" fill="#003399"></rect>
+      <text x="18" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="7" fill="#FFFFFF">DK</text>
+      <text x="110" y="33" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="19" letter-spacing="1.5" fill="#121417">AB 12 345</text>
+    </g>
+
+    <!-- cabinet with gateway, router, relay -->
+    <rect x="1096" y="150" width="56" height="120" rx="6" fill="#121417"></rect>
+    <rect x="1106" y="164" width="36" height="14" rx="3" fill="#2E3238"></rect>
+    <circle cx="1112" cy="171" r="3" fill="#F5C518"></circle>
+    <rect x="1106" y="190" width="36" height="14" rx="3" fill="#2E3238"></rect>
+    <circle cx="1112" cy="197" r="3" fill="#5B82F0"></circle>
+    <rect x="1106" y="216" width="36" height="14" rx="3" fill="#2E3238"></rect>
+    <text x="1124" y="294" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#121417">Skab</text>
+    <!-- wires: camera to cabinet, cabinet to barrier -->
+    <path d="M 786 100 L 1124 100 L 1124 150" fill="none" stroke="#1846C8" stroke-width="3"></path>
+    <path d="M 1124 270 L 1124 316 L 810 316" fill="none" stroke="#F5C518" stroke-width="4"></path>
+    <text x="960" y="92" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#1846C8">billede af pladen</text>
+    <text x="960" y="308" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#121417">signal: åbn</text>
+  </svg></div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px 32px; border-top: 6px solid #121417; padding-top: 20px">
+    <li style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1; color: #1846C8">1</span>
+      <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px">Kameraet læser pladen</span>
+      <span style="font-size: 14px; line-height: 1.5; color: #4A4F57">Kameraet over porten ser bilen komme og læser nummerpladen.</span>
+    </li>
+    <li style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1; color: #1846C8">2</span>
+      <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px">Gatewayen tjekker</span>
+      <span style="font-size: 14px; line-height: 1.5; color: #4A4F57">Den lille computer i skabet ser, om pladen har en booking eller en plads lige nu.</span>
+    </li>
+    <li style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1; color: #1846C8">3</span>
+      <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px">Relæet giver signal</span>
+      <span style="font-size: 14px; line-height: 1.5; color: #4A4F57">Relæet sender samme signal til porten som en almindelig trykknap.</span>
+    </li>
+    <li style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1; color: #1846C8">4</span>
+      <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px">Bommen går op</span>
+      <span style="font-size: 14px; line-height: 1.5; color: #4A4F57">Det hele sker på stedet, så porten virker, selv om internettet er nede.</span>
+    </li>
+  </ol>
+<!-- /drawing:Gate -->
+</div>
 </section>
 
 <section id="appen" style="background: #FFFFFF; border-top: 1px solid #D9D5CC; border-bottom: 1px solid #D9D5CC">
@@ -503,7 +611,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; border-top: 1px solid #D9D5CC">
 <details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
 <summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Mister lejerne deres plads?</summary>
-<p style="margin: 12px 0 0; color: #4A4F57">Nej. Faste lejere og ansatte har altid forrang. Der deles kun i de tidsrum, I vælger, eller når en lejer selv melder sin plads ledig.</p>
+<p style="margin: 12px 0 0; color: #4A4F57">Nej. Lejerne bestemmer selv. En plads deles kun, når lejeren selv melder den ledig i appen, og bookinger slutter altid 30 minutter før lejeren er tilbage.</p>
 </details>
 <details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
 <summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Hvad koster det os?</summary>
@@ -523,7 +631,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 </details>
 <details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
 <summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Hvad hvis det ikke virker for os?</summary>
-<p style="margin: 12px 0 0; color: #4A4F57">I starter med en prøveperiode med fri opsigelse. Er I ikke tilfredse, fjerner vi udstyret uden regning.</p>
+<p style="margin: 12px 0 0; color: #4A4F57">I starter med en prøveperiode med fri opsigelse. Er I ikke tilfredse, fjerner vi udstyret uden regning. Fortsætter I efter prøveperioden, binder I jer kun for 1 år.</p>
 </details>
 </div>
 </section>

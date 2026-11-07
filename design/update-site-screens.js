@@ -62,4 +62,23 @@ for (const name of SCREENS) {
   html = html.slice(0, a + start.length) + '\n' + rendered + '\n' + html.slice(b);
   console.log(`updated ${name}`);
 }
+// The gate drawing: its picture and its four steps, made to fit the page width.
+{
+  const start = '<!-- drawing:Gate -->';
+  const end = '<!-- /drawing:Gate -->';
+  const a = html.indexOf(start);
+  const b = html.indexOf(end);
+  if (a < 0 || b < a) throw new Error('index.html: markers for the gate drawing not found');
+  const src = fs.readFileSync(path.join(__dirname, 'app', 'Gate.dc.html'), 'utf8');
+  const svg = src.match(/<svg[\s\S]*?<\/svg>/)[0]
+    .replace(/<svg width="\d+" height="\d+" viewBox="([^"]+)"/,
+      '<div style="overflow-x: auto; border-radius: 14px"><svg viewBox="$1" style="display: block; width: 100%; min-width: 640px; height: auto"')
+    .replace(/<\/svg>$/, '</svg></div>');
+  const steps = src.match(/<ol[\s\S]*?<\/ol>/)[0]
+    .replace('grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;',
+      'grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px 32px;');
+  html = html.slice(0, a + start.length) + '\n' + svg + '\n' + steps + '\n' + html.slice(b);
+  console.log('updated Gate drawing');
+}
+
 fs.writeFileSync(indexPath, html);

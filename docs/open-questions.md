@@ -5,7 +5,7 @@
 - [ ] **"Er det lovligt?" FAQ** on the landing page: approve the wording.
 - [ ] **Subletting consent:** template wording for the owner agreement and the changes to tenant contracts.
 - [ ] **GDPR:** legal basis and retention for plate reads and tenant in/out logs; signage text; data processing agreement with owners.
-- [ ] **Owner agreement terms:** 0 kr. investment, 40/20/40 split (tenants/owner/ParkShare24), trial period with free cancellation, equipment removed at no charge.
+- [ ] **Owner agreement terms:** 0 kr. investment, 40/20/40 split (tenants/owner/ParkShare24), trial period with free cancellation, equipment removed at no charge, then a 1-year commitment after the trial.
 
 ## For the accountant
 - [ ] **Tax on tenant earnings:** must ParkShare24 report payouts to tenants to Skattestyrelsen? Any VAT on bookings and on the split?

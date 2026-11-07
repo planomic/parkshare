@@ -4,6 +4,8 @@ Newest first. Write down what was decided and why, so it is not reopened by acci
 
 ## 2026-11-07
 
+- **Owner terms: trial period with free cancellation, then a 1-year commitment.** If the owner isn't satisfied during the trial, we remove the equipment at no charge. Length of the trial still to decide.
+- **Tenants decide when their own space is shared.** The owner only chooses time windows for spaces without a regular tenant.
 - **No "open gate" button in the app.** Only the plate camera opens the gate. If it fails, the driver calls support, who check the booking and open it remotely. A button would let anyone with the app (or a shared login) open the gate.
 - **Revenue split: tenants 40 %, owner 20 %, ParkShare24 40 %** (was 40/30/30). Tenants' share stays highest because they must release their spaces for the business to work. ParkShare24 carries the cameras, installation, app and operations. Owner example on the landing page drops to about 197,000 kr./year.
 - **Price is always the cheapest in the area.** Drivers make a little more effort to park in a private cellar (finding the entrance, booking ahead), so the price must beat nearby street parking and parking houses for the same time. Pricing is set by ParkShare24 from local prices, not freely by the owner. The calculator's 20 kr./hour is an example and must be checked against each area.
