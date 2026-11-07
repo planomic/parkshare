@@ -28,12 +28,12 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 - Must work at phone width (390 px) without horizontal scroll. Touch targets ≥ 44 px. Real `<button>`, `<a href>`, `<label for>`.
 - Preview locally: `python3 -m http.server 8000`, then open http://localhost:8000.
 - The calculator: inputs `#r-spaces`, `#r-hours`, `#r-occ`, `#r-price`; outputs `#o-*`. Formula: `spaces × empty hours/day × occupancy × hourly price × 365` = yearly revenue. Split: tenants 40 %, owner 30 %, ParkShare24 30 %. If you change the split, change it everywhere (hero card, calculator, its footnote, the bar legend).
-- Contact form posts to Formspree: `action="https://formspree.io/f/DIT-FORMSPREE-ID"` is a placeholder until the user creates a form on formspree.io.
+- Contact form posts to Formspree: `action="https://formspree.io/f/xyeeaddz"`.
 
 ## Open TODOs
 
 - [x] Rebrand the page from "ParkMe" to "ParkShare24" (logo mark, `<title>`, nav, footer, copy).
-- [ ] Replace placeholders: `[kontakt@parkshare24.dk]`, `[telefonnummer]`, `[CVR-nr.]`, Formspree ID.
+- [ ] Replace placeholders: `[kontakt@parkshare24.dk]`, `[telefonnummer]`, `[CVR-nr.]`.
 - [ ] Confirm business terms stated on the page: 0 kr. investment for owners, 40/30/30 split, trial period with free cancellation, equipment removed at no charge.
 - [x] Create the GitHub repo and enable Pages.
 - [ ] Point DNS at GoDaddy (below; domain is Active at Punktum dk since 2026-11-07, waiting for GoDaddy to unlock DNS editing), enable HTTPS, verify the domain under the GitHub profile's Pages settings.
