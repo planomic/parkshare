@@ -89,7 +89,7 @@ button:focus-visible,input:focus-visible{outline:2px solid #1846C8;outline-offse
 
     <footer style="padding: 14px 16px 28px; display: flex; flex-direction: column; gap: 8px">
       <button type="button" onClick="{{invite}}" disabled="{{notReady}}" style="height: 52px; border: 0; border-radius: 8px; background: {{btnBg}}; color: {{btnFg}}; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">{{btnLabel}}</button>
-      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57; text-align: center">Du har ansvaret for din gæst. Bookingen slutter kl. {{toLabel}}.</p>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57; text-align: center">{{footNote}}</p>
     </footer>
   </sc-if>
 
@@ -178,6 +178,7 @@ class Component extends DCLogic {
       btnBg: ready ? '#1846C8' : '#D9D5CC', btnFg: ready ? '#FFFFFF' : '#4A4F57',
       btnLabel: btnLabel,
       paidLine: paidLine,
+      footNote: byPlate ? 'Din gæst får en SMS med adresse, tid og plads.' : 'Din gæst får en SMS med adresse, tid, plads og et link til at skrive sin nummerplade.',
       smsPlateLine: byPlate ? 'Kør ind på din nummerplade ' + st.plate.toUpperCase() + '. Porten åbner selv.' : 'Skriv din nummerplade her: parkshare24.dk/g/7K3Q. Porten åbner selv.',
       invite: function () { if (ready) self.setState({ sent: true }); },
       again: function () { self.setState({ sent: false, plate: '', phone: '' }); },
