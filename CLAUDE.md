@@ -21,7 +21,7 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 - `CNAME`: custom domain for GitHub Pages. Don't delete it.
 - `sales/ejere-prospekter.csv`: prospect list of car-park owners and channels (semicolon-separated, UTF-8 with BOM for Danish Excel). Organisations and roles only, no personal contact data.
 - `docs/`: product docs (Markdown).
-- `design/`: snapshots of the design system and app screens; live versions are claude.ai artifacts (links in `design/README.md`).
+- `design/`: snapshots of the design system and app screens; live versions are claude.ai artifacts (links in `design/README.md`). `node design/update-site-screens.js` copies the three main screens into the "Appen" section of `index.html`; don't hand-edit between the `<!-- screen:… -->` markers.
 
 ## Working on the page
 

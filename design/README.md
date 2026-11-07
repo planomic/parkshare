@@ -24,6 +24,14 @@ The artifacts are the source of truth. After changing one, copy its files here a
 - `Owner.dc.html`: owner web page "Pladser og lejere" (summary, filter by status, invite / resend / approve MitID mismatch, add tenant, import list), 1280 wide, works at phone width.
 - `canvas.json`: the canvas layout.
 
+## Updating the website's app screens
+
+The "Appen" section of `index.html` shows `Main`, `Driver` and `Arrived` exactly as on the canvas, in their starting state.
+
+1. Copy the latest canvas files into `design/app/` (the artifact is the source of truth).
+2. Run `node design/update-site-screens.js` from the repo root. It renders each screen and replaces it between the `<!-- screen:Name -->` markers in `index.html`.
+3. Check the page (`python3 -m http.server 8000`), then commit.
+
 ## Screens to do
 
 Done: tenant slide to share (`Main`), driver booking (`Driver`), driver arrived (`Arrived`), tenant sign-up (`Signup`), owner spaces and tenants (`Owner`).
