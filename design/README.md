@@ -22,6 +22,7 @@ The artifacts are the source of truth. After changing one, copy its files here a
 - `Arrived.dc.html`: driver screen "Kørt ind" (welcome, Kælder B, plads 47 marked, booked until, extend +30 min/+1 t/+2 t up to 16.30, call support if the gate does not open), 390 × 844.
 - `Signup.dc.html`: tenant sign-up (invitation for plads 47, MitID check (simulated), license plate, payout account, consent to terms and camera logging, done), 390 × 844.
 - `Owner.dc.html`: owner web page "Pladser og lejere" (summary, filter by status, invite / resend / approve MitID mismatch, add tenant, import list), 1280 wide, works at phone width.
+- `Gate.dc.html`: drawing "Sådan åbner porten" (camera reads the plate, gateway checks, relay signals, barrier opens), 1280 × 800.
 - `canvas.json`: the canvas layout.
 
 ## Updating the website's app screens

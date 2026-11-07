@@ -54,6 +54,13 @@
       "title": "Ejer · Pladser og lejere",
       "is_interactive": true,
       "expand": "fill"
+    },
+    "Gate.dc.html": {
+      "x": 0,
+      "y": 2164,
+      "w": 1280,
+      "h": 800,
+      "title": "Sådan åbner porten"
     }
   },
   "order": [
@@ -61,7 +68,8 @@
     "Driver.dc.html",
     "Arrived.dc.html",
     "Signup.dc.html",
-    "Owner.dc.html"
+    "Owner.dc.html",
+    "Gate.dc.html"
   ],
   "notes": {},
   "designSystems": [
