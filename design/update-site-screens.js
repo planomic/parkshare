@@ -13,7 +13,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const SCREENS = ['Main', 'Driver', 'Arrived'];
+const SCREENS = ['Main', 'Driver', 'Arrived', 'Guest'];
 
 function render(file, idPrefix) {
   const src = fs.readFileSync(file, 'utf8');
