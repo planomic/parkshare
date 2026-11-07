@@ -18,4 +18,5 @@ The artifacts are the source of truth. After changing one, copy its files here a
 ## `app/`: the app canvas
 
 - `Main.dc.html`: tenant screen "Del din plads" (slide to share after driving out), 390 × 844. Open it on the canvas to try it; the file alone needs the canvas runtime to render.
+- `Driver.dc.html`: driver screen "Book plads" (choose hours, pay, then how to get in with the "Åbn port" fallback), 390 × 844.
 - `canvas.json`: the canvas layout.

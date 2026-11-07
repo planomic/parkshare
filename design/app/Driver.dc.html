@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<title>Book plads</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+body{margin:0}
+a{color:#1846C8}a:hover{color:#0F2F8A}
+button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F1EC; color: #121417; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6; display: flex; flex-direction: column; overflow: hidden">
+
+  <header style="display: flex; align-items: center; gap: 4px; padding: 20px 16px 8px 8px">
+    <button type="button" aria-label="Tilbage" style="width: 44px; height: 44px; border: 0; background: transparent; color: #121417; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
+    </button>
+    <span style="font-size: 15px; font-weight: 600">{{headerTitle}}</span>
+  </header>
+
+  <sc-if value="{{notBooked}}" hint-placeholder-val="{{ true }}">
+    <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 18px; padding: 8px 16px 0">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>Billigste i området</p>
+        <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">P-kælder, Eksempelvej 12</h1>
+        <p style="margin: 0; font-size: 15px; color: #4A4F57">1620 København V · 3 ledige pladser</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px">
+          <span style="font-size: 14px; font-weight: 500; padding: 4px 12px; border-radius: 999px; background: #FFFFFF">Højde maks. 2,10 m</span>
+          <span style="font-size: 14px; font-weight: 500; padding: 4px 12px; border-radius: 999px; background: #FFFFFF">Indkørsel fra gården</span>
+        </div>
+      </div>
+
+      <section style="background: #FFFFFF; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px" aria-labelledby="time-h">
+        <h2 id="time-h" style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3">I dag</h2>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+          <div style="display: flex; flex-direction: column">
+            <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Fra</span>
+            <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15">kl. 9.00</span>
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Til</span>
+            <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15">kl. {{end}}</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid #D9D5CC; padding-top: 14px">
+          <span style="font-weight: 600" aria-live="polite">{{hours}} timer</span>
+          <div style="display: flex; gap: 8px">
+            <button type="button" aria-label="En time mindre" onClick="{{less}}" style="width: 48px; height: 48px; border-radius: 8px; border: 1px solid #121417; background: transparent; color: #121417; display: flex; align-items: center; justify-content: center; cursor: pointer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg>
+            </button>
+            <button type="button" aria-label="En time mere" onClick="{{more}}" style="width: 48px; height: 48px; border-radius: 8px; border: 1px solid #121417; background: transparent; color: #121417; display: flex; align-items: center; justify-content: center; cursor: pointer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </button>
+          </div>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Ledig til kl. 16.30. Pladsen er garanteret din i hele perioden.</p>
+      </section>
+
+      <section style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 4px" aria-label="Bil">
+        <div style="display: flex; flex-direction: column">
+          <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Nummerplade</span>
+          <span style="font-weight: 600; letter-spacing: 0.06em">AB 12 345</span>
+        </div>
+        <button type="button" style="min-height: 44px; padding: 0 12px; border: 0; background: transparent; color: #1846C8; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Skift</button>
+      </section>
+    </main>
+
+    <footer style="padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #D9D5CC; background: #F3F1EC">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
+        <span style="font-size: 15px; color: #4A4F57">{{hours}} t × 25 kr.</span>
+        <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15">{{total}} kr.</span>
+      </div>
+      <button type="button" onClick="{{pay}}" style="height: 52px; border: 0; border-radius: 8px; background: #1846C8; color: #FFFFFF; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Betal {{total}} kr.</button>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57; text-align: center">Du betaler på forhånd med MobilePay. Vi minder dig om det 15 min. før tiden udløber.</p>
+    </footer>
+  </sc-if>
+
+  <sc-if value="{{booked}}" hint-placeholder-val="{{ false }}">
+    <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 18px; padding: 8px 16px 0">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>Booket og betalt</p>
+        <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Din plads venter kl. 9.00–{{end}}</h1>
+        <p style="margin: 0; font-size: 15px; color: #4A4F57">P-kælder, Eksempelvej 12 · {{total}} kr. betalt</p>
+      </div>
+
+      <section style="background: #FFFFFF; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 14px" aria-labelledby="in-h">
+        <h2 id="in-h" style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3">Sådan kommer du ind</h2>
+        <ol style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px">
+          <li>Kør ind fra gården og hold ved porten.</li>
+          <li>Kameraet læser din nummerplade AB 12 345, og porten åbner.</li>
+          <li>Parker på en plads med gult skilt i Kælder B.</li>
+        </ol>
+      </section>
+
+      <section style="background: #121417; color: #F3F1EC; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0; font-size: 15px; color: #C3C7CD">Åbner porten ikke? Tryk her, når du holder foran den.</p>
+        <sc-if value="{{gateClosed}}" hint-placeholder-val="{{ true }}">
+          <button type="button" onClick="{{openGate}}" style="height: 52px; border: 0; border-radius: 8px; background: #F5C518; color: #121417; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Åbn port</button>
+        </sc-if>
+        <sc-if value="{{gateOpen}}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; height: 52px; border-radius: 8px; background: #1E2227; display: flex; align-items: center; justify-content: center; font-weight: 600" role="status">Porten åbner</p>
+        </sc-if>
+        <p style="margin: 0; font-size: 13px; color: #A9AEB6">Hjælp døgnet rundt: [telefonnummer]</p>
+      </section>
+    </main>
+
+    <footer style="padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 8px">
+      <button type="button" onClick="{{back}}" style="min-height: 44px; border: 0; background: transparent; color: #1846C8; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Tilbage til booking (prototype)</button>
+    </footer>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { hours: 4, booked: false, gate: false };
+  }
+  renderVals() {
+    var self = this;
+    var h = this.state.hours;
+    var PRICE = 25;
+    return {
+      headerTitle: this.state.booked ? 'Din booking' : 'Book plads',
+      hours: h,
+      end: (9 + h) + '.00',
+      total: h * PRICE,
+      booked: this.state.booked,
+      notBooked: !this.state.booked,
+      gateOpen: this.state.gate,
+      gateClosed: !this.state.gate,
+      less: function () { self.setState({ hours: Math.max(1, h - 1) }); },
+      more: function () { self.setState({ hours: Math.min(7, h + 1) }); },
+      pay: function () { self.setState({ booked: true, gate: false }); },
+      openGate: function () { self.setState({ gate: true }); },
+      back: function () { self.setState({ booked: false, gate: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

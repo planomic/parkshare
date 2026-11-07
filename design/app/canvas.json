@@ -5,9 +5,10 @@
   "launch": {"view": "canvas"},
   "pages": [],
   "boards": {
-    "Main.dc.html": {"x": 0, "y": 0, "w": 390, "h": 844, "title": "Lejer · Del din plads", "is_interactive": true, "radius": 32}
+    "Main.dc.html": {"x": 0, "y": 0, "w": 390, "h": 844, "title": "Lejer · Del din plads", "is_interactive": true, "radius": 32},
+    "Driver.dc.html": {"x": 470, "y": 0, "w": 390, "h": 844, "title": "Bilist · Book plads", "is_interactive": true, "radius": 32}
   },
-  "order": ["Main.dc.html"],
+  "order": ["Main.dc.html", "Driver.dc.html"],
   "notes": {},
   "designSystems": [
     {"title": "ParkShare24", "namespace": "parkshare24", "artifact": "https://claude.ai/artifact/NdjSg6grSwBs3AtAV2424k", "version": "1794074379-0eae", "copiedAt": "2026-11-07T18:42:00Z"}
