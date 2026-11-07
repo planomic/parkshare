@@ -86,13 +86,8 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
   </main>
 
   <footer style="padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 8px">
-    <sc-if value="{{gateClosed}}" hint-placeholder-val="{{ true }}">
-      <button type="button" onClick="{{openGate}}" style="height: 52px; border-radius: 8px; border: 1px solid #121417; background: transparent; color: #121417; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Åbn port</button>
-    </sc-if>
-    <sc-if value="{{gateOpen}}" hint-placeholder-val="{{ false }}">
-      <p style="margin: 0; height: 52px; border-radius: 8px; background: #F5C518; color: #121417; display: flex; align-items: center; justify-content: center; font-weight: 600" role="status">Porten åbner</p>
-    </sc-if>
-    <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57; text-align: center">Porten åbner selv, når kameraet ser din nummerplade. Hjælp: 42 73 12 55</p>
+    <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4A4F57; text-align: center">Porten åbner selv, når kameraet ser din nummerplade.</p>
+    <a href="tel:+4542731255" style="height: 52px; border-radius: 8px; border: 1px solid #121417; color: #121417; text-decoration: none; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: center">Problemer med porten? Ring 42 73 12 55</a>
   </footer>
 </div>
 </x-dc>
@@ -101,7 +96,7 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     // Minutes after midnight. Booked until 11.30; the space must be free by 16.30.
-    this.state = { end: 690, extending: false, added: 0, gate: false };
+    this.state = { end: 690, extending: false, added: 0 };
   }
   renderVals() {
     var self = this;
@@ -129,10 +124,7 @@ class Component extends DCLogic {
       atMax: e + 30 > FREE_TO,
       extras: extras,
       note: note,
-      openExtend: function () { self.setState({ extending: true }); },
-      gateOpen: this.state.gate,
-      gateClosed: !this.state.gate,
-      openGate: function () { self.setState({ gate: true }); }
+      openExtend: function () { self.setState({ extending: true }); }
     };
   }
 }

@@ -18,7 +18,7 @@ The driver flows are where the money comes in. Booking must take under a minute 
 ## D3. Arrive and get in (pilot)
 1. The camera reads the plate at the entrance; the barrier/gate opens.
 2. The app shows where to park: level, zone, space number (or "any free shared space" if spaces are pooled).
-3. **Fallback if the plate is not recognised:** an "Åbn port" ("Open gate") button in the app, active only during the booking at that car park, plus a support phone number. Never leave a driver stuck at the barrier.
+3. **Fallback if the plate is not recognised:** the driver calls support (42 73 12 55). Support checks the booking and the camera image and opens the gate remotely. There is **no "open gate" button in the app**: the camera is the only way in, so a phone alone can never open the gate. Never leave a driver stuck at the barrier.
 4. Exit: camera reads the plate; the barrier opens.
 
 ## D4. Extend, end or cancel
