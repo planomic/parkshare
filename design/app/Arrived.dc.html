@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<title>Kørt ind</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+body{margin:0}
+a{color:#1846C8}a:hover{color:#0F2F8A}
+button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F1EC; color: #121417; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6; display: flex; flex-direction: column; overflow: hidden">
+
+  <header style="display: flex; align-items: center; gap: 10px; padding: 20px 16px 12px">
+    <span style="width: 28px; height: 28px; background: #1846C8; color: #FFFFFF; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px" aria-hidden="true">P</span>
+    <span style="font-size: 15px; font-weight: 600">Bernhardt Jensens Boulevard 87</span>
+  </header>
+
+  <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 18px; padding: 4px 16px 0">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>Kørt ind kl. 9.27</p>
+      <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Velkommen. Parkér på plads 47.</h1>
+    </div>
+
+    <div style="background: #121417; color: #F3F1EC; border-radius: 14px; padding: 18px 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+      <div style="display: flex; flex-direction: column">
+        <span style="font-size: 14px; font-weight: 500; color: #C3C7CD">Etage</span>
+        <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15">Kælder B</span>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <span style="font-size: 14px; font-weight: 500; color: #C3C7CD">Plads</span>
+        <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15">47</span>
+      </div>
+    </div>
+
+    <div style="height: 104px; background: #B9B4A9; border-radius: 14px; overflow: hidden; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr))" role="img" aria-label="Din plads, 47, er markeret mellem to parkerede biler">
+      <div style="border-right: 4px solid #FFFFFF; display: flex; justify-content: center; padding-top: 10px">
+        <div style="width: 54px; height: 88px; border-radius: 15px 15px 11px 11px; background: #4A4F57; position: relative">
+          <span style="position: absolute; left: 7px; right: 7px; top: 14px; height: 18px; border-radius: 6px 6px 3px 3px; background: #2E3238"></span>
+          <span style="position: absolute; left: 9px; right: 9px; bottom: 9px; height: 11px; border-radius: 3px; background: #2E3238"></span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; background: #C9C5BB; outline: 4px solid #1846C8; outline-offset: -4px">
+        <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 36px; line-height: 1.1; color: #FFFFFF">47</span>
+        <span style="font-size: 12px; font-weight: 600; line-height: 1.2; padding: 2px 8px; border-radius: 999px; background: #1846C8; color: #FFFFFF">Din plads</span>
+      </div>
+      <div style="border-left: 4px solid #FFFFFF; display: flex; justify-content: center; padding-top: 10px">
+        <div style="width: 54px; height: 88px; border-radius: 15px 15px 11px 11px; background: #6B7078; position: relative">
+          <span style="position: absolute; left: 7px; right: 7px; top: 14px; height: 18px; border-radius: 6px 6px 3px 3px; background: #4A4F57"></span>
+          <span style="position: absolute; left: 9px; right: 9px; bottom: 9px; height: 11px; border-radius: 3px; background: #4A4F57"></span>
+        </div>
+      </div>
+    </div>
+
+    <section style="background: #FFFFFF; border-radius: 14px; padding: 18px 22px; display: flex; flex-direction: column; gap: 12px" aria-labelledby="until-h">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+        <div style="display: flex; flex-direction: column">
+          <span id="until-h" style="font-size: 14px; font-weight: 500; color: #4A4F57">Booket til</span>
+          <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15" aria-live="polite">kl. {{endLabel}}</span>
+        </div>
+        <sc-if value="{{closed}}" hint-placeholder-val="{{ true }}">
+          <button type="button" onClick="{{openExtend}}" disabled="{{atMax}}" style="min-height: 44px; padding: 0 18px; border-radius: 8px; border: 1px solid #121417; background: transparent; color: #121417; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Forlæng</button>
+        </sc-if>
+      </div>
+      <sc-if value="{{extending}}" hint-placeholder-val="{{ false }}">
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+          <sc-for list="{{extras}}" as="x" hint-placeholder-count="3">
+            <button type="button" onClick="{{x.pick}}" disabled="{{x.disabled}}" style="min-height: 52px; padding: 4px; border-radius: 8px; border: 1px solid {{x.border}}; background: #FFFFFF; color: {{x.fg}}; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.25">
+              <span style="font-size: 15px; font-weight: 600">{{x.label}}</span>
+              <span style="font-size: 13px">{{x.price}}</span>
+            </button>
+          </sc-for>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Pladsen er ledig til kl. 16.30. Betales med MobilePay.</p>
+      </sc-if>
+      <sc-if value="{{closed}}" hint-placeholder-val="{{ true }}">
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">{{note}}</p>
+      </sc-if>
+    </section>
+  </main>
+
+  <footer style="padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 8px">
+    <sc-if value="{{gateClosed}}" hint-placeholder-val="{{ true }}">
+      <button type="button" onClick="{{openGate}}" style="height: 52px; border-radius: 8px; border: 1px solid #121417; background: transparent; color: #121417; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Åbn port</button>
+    </sc-if>
+    <sc-if value="{{gateOpen}}" hint-placeholder-val="{{ false }}">
+      <p style="margin: 0; height: 52px; border-radius: 8px; background: #F5C518; color: #121417; display: flex; align-items: center; justify-content: center; font-weight: 600" role="status">Porten åbner</p>
+    </sc-if>
+    <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57; text-align: center">Porten åbner selv, når kameraet ser din nummerplade. Hjælp: 42 73 12 55</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    // Minutes after midnight. Booked until 11.30; the space must be free by 16.30.
+    this.state = { end: 690, extending: false, added: 0, gate: false };
+  }
+  renderVals() {
+    var self = this;
+    var FREE_TO = 990, PRICE = 20;
+    var e = this.state.end;
+    function fmt(m) { var hh = Math.floor(m / 60), mm = m % 60; return hh + '.' + (mm < 10 ? '0' + mm : mm); }
+    var extras = [30, 60, 120].map(function (min) {
+      var off = e + min > FREE_TO;
+      return {
+        label: min < 60 ? '+30 min' : '+' + (min / 60) + ' t',
+        price: (min / 60 * PRICE) + ' kr.',
+        disabled: off,
+        border: off ? '#D9D5CC' : '#121417',
+        fg: off ? '#6B7078' : '#121417',
+        pick: function () { if (!off) self.setState({ end: e + min, extending: false, added: self.state.added + min / 60 * PRICE }); }
+      };
+    });
+    var note = this.state.added > 0
+      ? 'Forlænget. ' + this.state.added + ' kr. betalt med MobilePay. Vi minder dig om det 15 min. før tiden udløber.'
+      : 'Vi minder dig om det 15 min. før tiden udløber.';
+    return {
+      endLabel: fmt(e),
+      extending: this.state.extending,
+      closed: !this.state.extending,
+      atMax: e + 30 > FREE_TO,
+      extras: extras,
+      note: note,
+      openExtend: function () { self.setState({ extending: true }); },
+      gateOpen: this.state.gate,
+      gateClosed: !this.state.gate,
+      openGate: function () { self.setState({ gate: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
