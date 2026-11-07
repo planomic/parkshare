@@ -43,6 +43,9 @@ Done: tenant slide to share (`Main`), driver booking (`Driver`), driver arrived 
 - [ ] Tenant: push notification on the lock screen ("Din plads er ledig. Del den, mens du er væk?") that opens slide to share.
 - [ ] Support: admin screen (look up plate or booking, see camera image, open the gate remotely, log who opened it).
 
+- [ ] Tenant: "Inviter gæst" (pick time, guest plate or SMS link, price, pay or use earnings, confirmation; the guest's SMS).
+- [ ] Owner: car park mode setting ("Åben" / "Kun lejere og gæster").
+
 ### Before scaling
 - [ ] Tenant: coming home early (space still booked: "Plads 52 er klar til dig" plus compensation).
 - [ ] Tenant: earnings and payouts (this month, history per booking, payout dates).

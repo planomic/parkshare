@@ -19,5 +19,9 @@
 - [ ] Coming home early when **no** space is free at all: what does the tenant get?
 - [ ] Pooled spaces ("any free shared space") or a fixed space per booking?
 - [ ] Pricing: decided that we are always the cheapest in the area (see decisions). Open: which prices we compare against (municipal street parking zones, nearby parking houses), where we get that data, how much below we go, and whether the owner can set a floor.
+- [ ] Guest bookings: normal price or a lower resident price? (A discount comes out of the split.)
+- [ ] Guest bookings ahead of time (e.g. a week before a birthday): only possible where a space is guaranteed free then.
+- [ ] Limit on guest bookings per tenant, so spaces aren't blocked for others?
+- [ ] "Kun lejere og gæster" earns much less: minimum price, monthly fee, or an agreement to switch to "Åben" later, so hardware and support are covered?
 - [ ] Which MitID broker?
 - [ ] How do tenants get paid out: monthly, or above a minimum amount?

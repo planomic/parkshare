@@ -36,6 +36,15 @@ The tenant must always get a space.
 3. The driver is never moved.
 4. If no space is free at all: to decide (see open questions).
 
+## T6. Invite a guest ("Inviter gæst")
+Works in both car park modes; in "Kun lejere og gæster" it is the only way outsiders get in.
+1. Tenant taps "Inviter gæst" and picks day and time (e.g. Saturday 14.00–22.00).
+2. Enters the guest's license plate, or sends the guest a link by SMS so the guest enters it. The guest needs no app.
+3. The app finds a free space in the same car park (a space another tenant has shared, or one without a tenant) and shows the price.
+4. The tenant pays in the app, or pays with their sharing earnings ("Betal med din indtjening").
+5. The guest gets an SMS with address, time, space number and "Kør ind på din nummerplade". The camera opens only for that plate during the booking.
+6. Usual rules: the space owner's 30-minute buffer, a reminder before the end, support if the gate does not open. The tenant is responsible for their guest.
+
 ## T5. Earnings and payouts
 - "Du har tjent 350 kr. denne måned." (Matches the landing page example: about 350 kr. per tenant per month at 20 kr./hour incl. VAT.)
 - History per booking. Monthly payout to the tenant's bank account.

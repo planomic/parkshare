@@ -25,5 +25,9 @@ Owner = property owner, housing association board or facility manager. The owner
 - Owner can report a wrong link, and a tenant can report "that's not my space" to the owner from the app. The owner's list decides.
 
 ## O5. Rules
-- Which spaces are shared, set hours, price.
+- **Car park mode**, chosen per car park:
+  - **Åben** (open): anyone with the app can book; the car park shows in search.
+  - **Kun lejere og gæster** (tenants and guests only): hidden from search; only the car park's tenants can book, for guests they invite (tenant flow T6).
+  - Later: **open at set times** (e.g. weekdays 8–17 open, otherwise tenants and guests only).
+- Time windows for spaces without a regular tenant. Tenants always decide for their own space. ParkShare24 sets the price (always the cheapest in the area).
 - Blocked plates.
