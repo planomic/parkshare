@@ -23,3 +23,25 @@ The artifacts are the source of truth. After changing one, copy its files here a
 - `Signup.dc.html`: tenant sign-up (invitation for plads 47, MitID check (simulated), license plate, payout account, consent to terms and camera logging, done), 390 × 844.
 - `Owner.dc.html`: owner web page "Pladser og lejere" (summary, filter by status, invite / resend / approve MitID mismatch, add tenant, import list), 1280 wide, works at phone width.
 - `canvas.json`: the canvas layout.
+
+## Screens to do
+
+Done: tenant slide to share (`Main`), driver booking (`Driver`), driver arrived (`Arrived`), tenant sign-up (`Signup`), owner spaces and tenants (`Owner`).
+
+### Pilot
+- [ ] Driver: find a car park (search or map, free spaces and price per car park).
+- [ ] Driver: sign-up (phone number with SMS code, license plate, MobilePay, terms incl. camera notice).
+- [ ] Tenant: push notification on the lock screen ("Din plads er ledig. Del den, mens du er væk?") that opens slide to share.
+- [ ] Support: admin screen (look up plate or booking, see camera image, open the gate remotely, log who opened it).
+
+### Before scaling
+- [ ] Tenant: coming home early (space still booked: "Plads 52 er klar til dig" plus compensation).
+- [ ] Tenant: earnings and payouts (this month, history per booking, payout dates).
+- [ ] Driver: reminder 15 min before the end with one-tap extend; overstay handling (waits on the lawyer, see `docs/open-questions.md`).
+- [ ] Driver: my bookings and receipts (upcoming, past, cancel).
+- [ ] Tenant: automatic sharing and schedules ("Del automatisk på hverdage 8–17?", share a day ahead).
+
+### Owner and onboarding
+- [ ] Invitation message: SMS and email text, and a letter with QR code and short code for tenants without phone or email on file.
+- [ ] Owner: "Overblik" tab (monthly overview) and "Udbetalinger" tab (payouts). A monthly email report is enough for the pilot.
+- [ ] Owner: import a tenant list (upload spreadsheet, check matches, then send invitations).

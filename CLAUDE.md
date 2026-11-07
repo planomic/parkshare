@@ -19,6 +19,7 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 
 - `index.html`: the entire site. One self-contained file: inline styles, Google Fonts (Archivo for headings, Inter for body), a small vanilla-JS revenue calculator at the bottom. No framework, no bundler.
 - `CNAME`: custom domain for GitHub Pages. Don't delete it.
+- `sales/ejere-prospekter.csv`: prospect list of car-park owners and channels (semicolon-separated, UTF-8 with BOM for Danish Excel). Organisations and roles only, no personal contact data.
 - `docs/`: product docs (Markdown).
 - `design/`: snapshots of the design system and app screens; live versions are claude.ai artifacts (links in `design/README.md`).
 
@@ -39,6 +40,7 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 - [x] Create the GitHub repo and enable Pages.
 - [x] Point DNS at GitHub (done 2026-11-07 at GoDaddy).
 - [ ] Enforce HTTPS once GitHub issues the certificate; verify the domain under the GitHub profile's Pages settings (TXT record).
+- [ ] Design the missing app screens: checklist in `design/README.md` ("Screens to do").
 - [ ] When the app screens on the canvas are done, update the "Appen" section on the landing page to match them (price 20 kr./t, Aarhus example, grey bay row, "Billigste i området", one 30-min buffer).
 - [ ] Have a lawyer approve the "Er det lovligt?" FAQ wording before launch.
 
