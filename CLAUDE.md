@@ -8,9 +8,9 @@ ParkShare24 (working name was "ParkMe") is a business that lets owners of privat
 
 This repo currently holds only the **public marketing landing page**, aimed at car-park owners (B2B). There is no app or backend yet.
 
-- Domain: `parkshare24.dk` (bought; DNS not yet pointed at GitHub Pages)
+- Domain: `parkshare24.dk` (registered at GoDaddy; DNS not yet pointed at GitHub Pages)
 - Hosting: GitHub Pages, static, no build step. The `CNAME` file holds the custom domain.
-- GitHub account: `planomic`. Repo not created yet: create it public (free Pages), push, then Settings → Pages → branch `main`, `/ (root)`, custom domain `parkshare24.dk`, Enforce HTTPS.
+- GitHub repo: `planomic/parkshare` (public). Pages is on: branch `main`, `/ (root)`, custom domain `parkshare24.dk`. Enforce HTTPS once DNS resolves.
 - Original design: a Claude Design canvas (artifact "ParkMe landing page"). `index.html` was exported from it by hand; this file is now the source of truth.
 
 ## Files
@@ -29,10 +29,11 @@ This repo currently holds only the **public marketing landing page**, aimed at c
 
 ## Open TODOs
 
-- [ ] Rebrand the page from "ParkMe" to "ParkShare24" (logo mark, `<title>`, nav, footer, copy).
-- [ ] Replace placeholders: `[kontakt@parkme.dk]`, `[telefonnummer]`, `[CVR-nr.]`, Formspree ID.
+- [x] Rebrand the page from "ParkMe" to "ParkShare24" (logo mark, `<title>`, nav, footer, copy).
+- [ ] Replace placeholders: `[kontakt@parkshare24.dk]`, `[telefonnummer]`, `[CVR-nr.]`, Formspree ID.
 - [ ] Confirm business terms stated on the page: 0 kr. investment for owners, 40/30/30 split, trial period with free cancellation, equipment removed at no charge.
-- [ ] Create the GitHub repo, enable Pages, point DNS (below), enable HTTPS, verify the domain under the GitHub profile's Pages settings.
+- [x] Create the GitHub repo and enable Pages.
+- [ ] Point DNS at GoDaddy (below; domain is Active at Punktum dk since 2026-11-07, waiting for GoDaddy to unlock DNS editing), enable HTTPS, verify the domain under the GitHub profile's Pages settings.
 - [ ] Have a lawyer approve the "Er det lovligt?" FAQ wording before launch.
 
 ## DNS for parkshare24.dk (at the registrar)
