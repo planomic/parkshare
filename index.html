@@ -54,17 +54,17 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <div style="flex: 1 1 380px; min-width: 0; background: #121417; color: #F3F1EC; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap">
 <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px">Eksempel: 60 pladser</span>
-<span style="font-size: 13px; color: #A9AEB6">6 ledige timer/døgn · 30 % belægning · 20 kr./t</span>
+<span style="font-size: 13px; color: #A9AEB6">6 ledige timer/døgn · 30 % belægning · 20 kr./t inkl. moms</span>
 </div>
 <div style="height: 1px; background: #2E3238"></div>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 14px; color: #A9AEB6">Til ejendommen pr. år</span>
-<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 48px; line-height: 1.05; letter-spacing: -0.02em">ca. 158.000 kr.</span>
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 48px; line-height: 1.05; letter-spacing: -0.02em">ca. 126.000 kr.</span>
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
 <div style="background: #1E2227; border-radius: 10px; padding: 16px">
 <div style="font-size: 13px; color: #A9AEB6">Pr. lejer pr. måned</div>
-<div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 26px">ca. 440 kr.</div>
+<div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 26px">ca. 350 kr.</div>
 </div>
 <div style="background: #1E2227; border-radius: 10px; padding: 16px">
 <div style="font-size: 13px; color: #A9AEB6">Jeres udgift</div>
@@ -325,7 +325,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
         </div>
         <div style="display: flex; flex-direction: column; align-items: flex-end">
           <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Du tjener ca.</span>
-          <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; color: #1846C8">20 kr.</span>
+          <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; color: #1846C8">15 kr.</span>
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 6px" role="img" aria-label="Delt fra kl. 8.12 til kl. 16.30, derefter 30 minutters buffer, tilbage kl. 17">
@@ -339,7 +339,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
         </div>
       </div>
       
-      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Skøn ud fra 20 kr./time, 30 % belægning og din andel på 40 %.</p>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Skøn ud fra 20 kr./time inkl. moms, 30 % belægning og din andel på 40 % af beløbet ekskl. moms.</p>
     </section>
   </main>
 
@@ -541,7 +541,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <div style="background: #F3F1EC; color: #121417; border-radius: 16px; padding: 32px">
 <div style="font-size: 15px; color: #4A4F57">Til ejendommen pr. år</div>
 <div style="font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(40px, 5vw, 60px); line-height: 1.05; letter-spacing: -0.02em"><span id="o-owner"></span></div>
-<div style="margin-top: 6px; font-size: 15px; color: #4A4F57">20 % af en omsætning på <span id="o-revenue"></span></div>
+<div style="margin-top: 6px; font-size: 15px; color: #4A4F57">20 % af en omsætning ekskl. moms på <span id="o-revenue"></span></div>
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
 <div style="background: #1E2227; border-radius: 14px; padding: 22px">
@@ -560,7 +560,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 </div>
 <span style="font-size: 14px; color: #D5D8DD; max-width: 220px">ParkShare24 dækker kameraer, app, installation og drift.</span>
 </div>
-<p style="margin: 4px 0 0; font-size: 13px; color: #A9AEB6">Fordeling: lejere 40 %, ejendom 20 %, ParkShare24 40 %. Pladser uden fast lejer: ejendom 60 %, ParkShare24 40 %. Vejledende beregning – ikke et tilbud.</p>
+<p style="margin: 4px 0 0; font-size: 13px; color: #A9AEB6">Timepris inkl. moms. Fordeling af omsætningen ekskl. moms og betalingsgebyrer: lejere 40 %, ejendom 20 %, ParkShare24 40 %. Pladser uden fast lejer: ejendom 60 %, ParkShare24 40 %. Vejledende beregning – ikke et tilbud.</p>
 </div>
 </div>
 </section>
@@ -689,7 +689,8 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
   function v(k){return Number(document.getElementById('r-'+k).value);}
   function calc(){
     ids.forEach(function(k){document.getElementById('o-'+k).textContent=v(k);});
-    var rev=v('spaces')*v('hours')*(v('occ')/100)*v('price')*365;
+    // Prices are incl. VAT; the split is of revenue excl. VAT (25 %).
+    var rev=v('spaces')*v('hours')*(v('occ')/100)*v('price')*365/1.25;
     document.getElementById('o-revenue').textContent=kr(rev);
     document.getElementById('o-owner').textContent=kr(rev*0.2);
     document.getElementById('o-tenants').textContent=kr(rev*0.4);

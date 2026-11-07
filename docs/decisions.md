@@ -4,6 +4,7 @@ Newest first. Write down what was decided and why, so it is not reopened by acci
 
 ## 2026-11-07
 
+- **Prices are shown incl. VAT; the split is of revenue excl. VAT and payment fees.** Danish consumer prices must include VAT, and parking rental is normally VAT-liable (accountant to confirm). Of 20 kr./hour, 16 kr. is shared. All examples on the page, the screens and in the docs use this.
 - **Spaces without a regular tenant: owner 60 %, ParkShare24 40 %.** Vacant and guest spaces have no tenant to receive the 40 % tenant share, so it goes to the owner. A strong argument for boards, at no cost to ParkShare24.
 - **Owner terms: trial period with free cancellation, then a 1-year commitment.** If the owner isn't satisfied during the trial, we remove the equipment at no charge. Length of the trial still to decide.
 - **Tenants decide when their own space is shared.** The owner only chooses time windows for spaces without a regular tenant.

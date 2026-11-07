@@ -29,7 +29,7 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 - Look: warm off-white ground `#F3F1EC`, ink `#121417`, accent blue `#1846C8`, signal yellow `#F5C518`, muted text `#4A4F57`, hairlines `#D9D5CC`. Headings Archivo 700–800 with tight letter-spacing. No gradients, no emoji, no stock photos.
 - Must work at phone width (390 px) without horizontal scroll. Touch targets ≥ 44 px. Real `<button>`, `<a href>`, `<label for>`.
 - Preview locally: `python3 -m http.server 8000`, then open http://localhost:8000.
-- The calculator: inputs `#r-spaces`, `#r-hours`, `#r-occ`, `#r-price`; outputs `#o-*`. Formula: `spaces × empty hours/day × occupancy × hourly price × 365` = yearly revenue. Split: tenants 40 %, owner 20 %, ParkShare24 40 %; for spaces without a regular tenant, owner 60 %, ParkShare24 40 %. If you change the split, change it everywhere (hero card, calculator, its footnote, the bar legend).
+- The calculator: inputs `#r-spaces`, `#r-hours`, `#r-occ`, `#r-price`; outputs `#o-*`. Formula: `spaces × empty hours/day × occupancy × hourly price × 365 / 1.25` = yearly revenue excl. VAT (prices are shown incl. VAT; the split is of revenue excl. VAT and payment fees). Split: tenants 40 %, owner 20 %, ParkShare24 40 %; for spaces without a regular tenant, owner 60 %, ParkShare24 40 %. If you change the split, change it everywhere (hero card, calculator, its footnote, the bar legend).
 - Contact form posts to Formspree: `action="https://formspree.io/f/xyeeaddz"`.
 
 ## Open TODOs
@@ -63,4 +63,4 @@ Remove the registrar's default parking A/CNAME records on `@` and `www`.
 - Signage must clearly state the parking terms and the camera surveillance. Camera data falls under GDPR.
 - Tenants usually may not sublet their space without the owner's consent; the owner agreement with ParkShare24 must provide that consent and adjust tenant contracts.
 - Precedent used in sales copy: Copenhagen Municipality rents about 3,000 private parking spaces for residents with a resident licence (beboerlicens); about 2,400 of them are booked in the Visitors app (kk.dk, answer of 19 Feb 2026). It is a similar idea, not the same model: the municipality pays owners to rent spaces, tenants don't share their own spaces and drivers don't pay per hour. Say "Idéen er afprøvet", never "Modellen er afprøvet".
-- Example numbers used on the page (assumptions, not market data): 60 spaces, 6 empty hours/day, 30 % occupancy, 20 kr./hour → about 788,000 kr. revenue/year, about 158,000 kr. to the owner (20 %), about 440 kr./month per tenant (40 %).
+- Example numbers used on the page (assumptions, not market data): 60 spaces, 6 empty hours/day, 30 % occupancy, 20 kr./hour incl. VAT → about 631,000 kr. revenue/year excl. VAT, about 126,000 kr. to the owner (20 %), about 350 kr./month per tenant (40 %).

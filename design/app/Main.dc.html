@@ -91,7 +91,7 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
         </div>
       </div>
       </sc-if>
-      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Skøn ud fra 20 kr./time, 30 % belægning og din andel på 40 %.</p>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Skøn ud fra 20 kr./time inkl. moms, 30 % belægning og din andel på 40 % af beløbet ekskl. moms.</p>
     </section>
   </main>
 
@@ -128,9 +128,9 @@ class Component extends DCLogic {
   renderVals() {
     var MAX = 294;
     var opts = [
-      { id: 'k17', label: 'kl. 17', sub: 'Din normale tid', until: '16.30', earn: '20', back: '17', share: 8.3 },
-      { id: 'k22', label: 'I aften', sub: 'kl. 22', until: '21.30', earn: '30', back: '22', share: 13.3 },
-      { id: 'k7', label: 'I morgen', sub: 'kl. 7', until: '6.30', earn: '55', back: '7', share: 22.3 },
+      { id: 'k17', label: 'kl. 17', sub: 'Din normale tid', until: '16.30', earn: '15', back: '17', share: 8.3 },
+      { id: 'k22', label: 'I aften', sub: 'kl. 22', until: '21.30', earn: '25', back: '22', share: 13.3 },
+      { id: 'k7', label: 'I morgen', sub: 'kl. 7', until: '6.30', earn: '45', back: '7', share: 22.3 },
       { id: 'pick', label: 'Vælg tid', sub: 'Dato og klokkeslæt', until: '', earn: '', back: '', share: 1 }
     ];
     var self = this;
