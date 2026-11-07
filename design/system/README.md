@@ -4,7 +4,7 @@ ParkShare24 lets owners of private car parks earn money from empty spaces. Drive
 
 - **Danish first.** All product copy is Danish. Plain, direct, short sentences. Say what happens, in the user's words: "Del din plads", not "Aktivér tilgængelighed".
 - **Who we talk to.** Owners and boards on the web: "I / jeres" ("Jeres tomme p-pladser kan tjene penge."). Drivers and tenants in the app: "du / din" ("Din plads er ledig. Del den, mens du er væk?").
-- **Money is concrete.** Always show the amount and the unit: "ca. 15 kr.", "20 kr./time", "ca. 126.000 kr. om året". Danish number format: `.` for thousands, `,` for decimals, `kl. 16.30` for times.
+- **Money is concrete.** Always show the amount and the unit: "ca. 15 kr.", "20 kr./time", "ca. 139.000 kr. om året". Danish number format: `.` for thousands, `,` for decimals, `kl. 16.30` for times.
 - **Never threaten.** ParkShare24 earns on pre-paid bookings, never on fines. No copy about fines, "kontrolafgift" or charging people afterwards.
 - **No emoji, no exclamation marks** in product copy. Sentence case for headings and buttons.
 
