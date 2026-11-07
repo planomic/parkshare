@@ -4,6 +4,7 @@ Newest first. Write down what was decided and why, so it is not reopened by acci
 
 ## 2026-11-07
 
+- **Spaces without a regular tenant: owner 60 %, ParkShare24 40 %.** Vacant and guest spaces have no tenant to receive the 40 % tenant share, so it goes to the owner. A strong argument for boards, at no cost to ParkShare24.
 - **Owner terms: trial period with free cancellation, then a 1-year commitment.** If the owner isn't satisfied during the trial, we remove the equipment at no charge. Length of the trial still to decide.
 - **Tenants decide when their own space is shared.** The owner only chooses time windows for spaces without a regular tenant.
 - **No "open gate" button in the app.** Only the plate camera opens the gate. If it fails, the driver calls support, who check the booking and open it remotely. A button would let anyone with the app (or a shared login) open the gate.

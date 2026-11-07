@@ -16,7 +16,7 @@ Owner = property owner, housing association board or facility manager. The owner
 
 ## O3. Overview
 - Status per space: not invited / invited / linked / sharing.
-- Bookings, occupancy, revenue and the owner's 20 %.
+- Bookings, occupancy, revenue and the owner's share (20 % of spaces with a tenant, 60 % of spaces without one).
 - Pilot: a monthly report by email. In-app dashboard later.
 
 ## O4. Keep it up to date

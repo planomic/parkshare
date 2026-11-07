@@ -29,7 +29,7 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 - Look: warm off-white ground `#F3F1EC`, ink `#121417`, accent blue `#1846C8`, signal yellow `#F5C518`, muted text `#4A4F57`, hairlines `#D9D5CC`. Headings Archivo 700–800 with tight letter-spacing. No gradients, no emoji, no stock photos.
 - Must work at phone width (390 px) without horizontal scroll. Touch targets ≥ 44 px. Real `<button>`, `<a href>`, `<label for>`.
 - Preview locally: `python3 -m http.server 8000`, then open http://localhost:8000.
-- The calculator: inputs `#r-spaces`, `#r-hours`, `#r-occ`, `#r-price`; outputs `#o-*`. Formula: `spaces × empty hours/day × occupancy × hourly price × 365` = yearly revenue. Split: tenants 40 %, owner 20 %, ParkShare24 40 %. If you change the split, change it everywhere (hero card, calculator, its footnote, the bar legend).
+- The calculator: inputs `#r-spaces`, `#r-hours`, `#r-occ`, `#r-price`; outputs `#o-*`. Formula: `spaces × empty hours/day × occupancy × hourly price × 365` = yearly revenue. Split: tenants 40 %, owner 20 %, ParkShare24 40 %; for spaces without a regular tenant, owner 60 %, ParkShare24 40 %. If you change the split, change it everywhere (hero card, calculator, its footnote, the bar legend).
 - Contact form posts to Formspree: `action="https://formspree.io/f/xyeeaddz"`.
 
 ## Open TODOs
