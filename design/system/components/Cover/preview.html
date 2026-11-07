@@ -1,0 +1,31 @@
+<!-- @dsCard height=288 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Inter:wght@400&display=swap">
+<style>
+  html, body { margin: 0; }
+  body { background: var(--ground); width: 960px; height: 288px; position: relative; overflow: hidden; }
+  svg { position: absolute; left: 480px; top: 0; }
+  .slab { fill: var(--accent); }
+  .sig { fill: var(--signal); }
+  .ink { fill: var(--ink); }
+  .r { rx: var(--radius-md); }
+  .name { position: absolute; left: 40px; bottom: 64px; margin: 0; max-width: 440px; font-family: var(--font-display); font-weight: 800; font-size: 64px; line-height: 0.95; letter-spacing: -0.02em; color: var(--ink); }
+  .tag { position: absolute; left: 40px; bottom: 36px; margin: 0; max-width: 440px; font-family: var(--font-body); font-size: 14px; color: var(--muted); }
+</style>
+<svg width="480" height="288" viewBox="0 0 480 288" aria-hidden="true">
+  <!--
+    blocks: accent slab 360x288 (bleeds top, right, bottom), signal tile 80x80, ink tile 80x128; corners radius-md (8px) on tiles, slab square
+    arrangement: one tall slab with two satellites on its left, like a car park entrance and its sign
+    pattern: literal motif, painted bay lines. Five signal stripes 6px wide (the landing page's eyebrow bar height) at a 72px pitch rising from the slab's floor, because the brand is about empty bays
+    scales: space-3 16px inset, space-4 22px gap, 72px pitch (space-1 x 9), radius-md 8px
+  -->
+  <rect class="slab" x="120" y="0" width="360" height="288"/>
+  <rect class="sig" x="148" y="132" width="6" height="156"/>
+  <rect class="sig" x="220" y="132" width="6" height="156"/>
+  <rect class="sig" x="292" y="132" width="6" height="156"/>
+  <rect class="sig" x="364" y="132" width="6" height="156"/>
+  <rect class="sig" x="436" y="132" width="6" height="156"/>
+  <rect class="sig r" x="16" y="16" width="80" height="80"/>
+  <rect class="ink r" x="16" y="118" width="80" height="128"/>
+</svg>
+<p class="name">ParkShare24</p>
+<p class="tag">Tomme p-pladser, booket og betalt på forhånd.</p>

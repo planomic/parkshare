@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<title>Del din plads</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+body{margin:0}
+a{color:#1846C8}a:hover{color:#0F2F8A}
+button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F1EC; color: #121417; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6; display: flex; flex-direction: column; overflow: hidden">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 16px 12px">
+    <div style="display: flex; align-items: center; gap: 10px">
+      <span style="width: 28px; height: 28px; background: #1846C8; color: #FFFFFF; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px" aria-hidden="true">P</span>
+      <span style="font-size: 15px; font-weight: 600">Plads 47 · Kælder B</span>
+    </div>
+    <button type="button" aria-label="Luk" style="width: 44px; height: 44px; border: 0; background: transparent; color: #121417; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+    </button>
+  </header>
+
+  <div style="margin: 0 16px; height: 148px; background: #121417; border-radius: 14px; position: relative; overflow: hidden; display: flex; align-items: flex-end; justify-content: center" aria-hidden="true">
+    <span style="position: absolute; left: 72px; top: 0; bottom: 0; width: 6px; background: #F5C518"></span>
+    <span style="position: absolute; right: 72px; top: 0; bottom: 0; width: 6px; background: #F5C518"></span>
+    <span style="position: absolute; left: 72px; right: 72px; bottom: 22px; height: 6px; background: #F5C518"></span>
+    <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 64px; line-height: 1; letter-spacing: -0.02em; color: #6B7078; margin-bottom: 44px">47</span>
+  </div>
+
+  <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 22px; padding: 22px 16px 0">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>Kørt ud kl. 8.12</p>
+      <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance">Din plads er ledig. Del den, mens du er væk?</h1>
+    </div>
+
+    <sc-if value="{{notShared}}" hint-placeholder-val="{{ true }}">
+      <section style="display: flex; flex-direction: column; gap: 12px" aria-labelledby="back-q">
+        <h2 id="back-q" style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3">Hvornår er du tilbage?</h2>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px" role="radiogroup" aria-labelledby="back-q">
+          <sc-for list="{{options}}" as="item" hint-placeholder-count="4">
+            <button type="button" role="radio" aria-checked="{{item.checked}}" onClick="{{item.pick}}" style="min-height: 56px; padding: 8px 14px; border-radius: 8px; border: 1px solid #121417; background: {{item.bg}}; color: {{item.fg}}; font: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column; justify-content: center; line-height: 1.3">
+              <span style="font-size: 17px; font-weight: 600">{{item.label}}</span>
+              <span style="font-size: 13px; opacity: 0.85">{{item.sub}}</span>
+            </button>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <section style="background: #FFFFFF; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 14px">
+      <sc-if value="{{noTime}}" hint-placeholder-val="{{ false }}">
+        <p style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3">Vælg dato og klokkeslæt, så viser vi, hvor længe pladsen kan bookes, og hvad du tjener.</p>
+      </sc-if>
+      <sc-if value="{{hasTime}}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px">
+        <div style="display: flex; flex-direction: column">
+          <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Kan bookes til</span>
+          <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15">kl. {{until}}</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end">
+          <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Du tjener ca.</span>
+          <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; color: #1846C8">{{earn}} kr.</span>
+        </div>
+      </div>
+      </sc-if>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Bookinger slutter 30 min. før du er tilbage, så pladsen altid er fri. Skøn ud fra 25 kr./time, 30 % belægning og din andel på 40 %.</p>
+    </section>
+  </main>
+
+  <footer style="padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 8px">
+    <sc-if value="{{waitTime}}" hint-placeholder-val="{{ false }}">
+      <button type="button" disabled style="height: 64px; border-radius: 999px; border: 1px solid #121417; background: transparent; color: #4A4F57; font: inherit; font-size: 17px; font-weight: 600">Vælg tidspunkt først</button>
+    </sc-if>
+    <sc-if value="{{canSlide}}" hint-placeholder-val="{{ true }}">
+      <div style="position: relative; height: 64px; border-radius: 999px; background: #121417; display: flex; align-items: center; justify-content: center">
+        <span style="color: #F3F1EC; font-weight: 600; font-size: 17px; padding-left: 48px; opacity: {{labelOpacity}}" aria-hidden="true">Skub for at dele</span>
+        <button type="button" aria-label="Del pladsen til kl. {{until}}" onPointerDown="{{down}}" onPointerMove="{{move}}" onPointerUp="{{up}}" onPointerCancel="{{cancel}}" onClick="{{tap}}" style="position: absolute; left: 4px; top: 4px; width: 56px; height: 56px; border-radius: 999px; border: 0; background: #F5C518; color: #121417; display: flex; align-items: center; justify-content: center; cursor: grab; touch-action: none; transform: translateX({{knobX}}px)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+      <button type="button" style="min-height: 44px; border: 0; background: transparent; color: #121417; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Ikke denne gang</button>
+    </sc-if>
+    <sc-if value="{{shared}}" hint-placeholder-val="{{ false }}">
+      <div style="height: 64px; border-radius: 999px; background: #F5C518; color: #121417; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600; font-size: 17px" role="status">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+        Delt til kl. {{until}}
+      </div>
+      <button type="button" onClick="{{undo}}" style="min-height: 44px; border: 0; background: transparent; color: #1846C8; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Fortryd</button>
+    </sc-if>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { picked: 'k17', shared: false, x: 0, dragging: false, moved: false };
+    this.startX = 0;
+  }
+  renderVals() {
+    var MAX = 294;
+    var opts = [
+      { id: 'k17', label: 'kl. 17', sub: 'Din normale tid', until: '16.30', earn: '25' },
+      { id: 'k22', label: 'I aften', sub: 'kl. 22', until: '21.30', earn: '40' },
+      { id: 'k7', label: 'I morgen', sub: 'kl. 7', until: '6.30', earn: '65' },
+      { id: 'pick', label: 'Vælg tid', sub: 'Dato og klokkeslæt', until: '', earn: '' }
+    ];
+    var self = this;
+    var cur = opts.filter(function (o) { return o.id === self.state.picked; })[0];
+    var options = opts.map(function (o) {
+      var on = o.id === self.state.picked;
+      return {
+        label: o.label, sub: o.sub,
+        checked: on ? 'true' : 'false',
+        bg: on ? '#121417' : '#FFFFFF',
+        fg: on ? '#F3F1EC' : '#121417',
+        pick: function () { self.setState({ picked: o.id }); }
+      };
+    });
+    return {
+      options: options,
+      until: cur.until,
+      earn: cur.earn,
+      shared: this.state.shared,
+      notShared: !this.state.shared,
+      hasTime: cur.id !== 'pick',
+      noTime: cur.id === 'pick',
+      canSlide: !this.state.shared && cur.id !== 'pick',
+      waitTime: !this.state.shared && cur.id === 'pick',
+      knobX: this.state.x,
+      labelOpacity: String(Math.max(0, 1 - this.state.x / 160)),
+      down: function (e) {
+        self.startX = e.clientX - self.state.x;
+        if (e.currentTarget.setPointerCapture) e.currentTarget.setPointerCapture(e.pointerId);
+        self.setState({ dragging: true, moved: false });
+      },
+      move: function (e) {
+        if (!self.state.dragging) return;
+        var x = Math.min(MAX, Math.max(0, e.clientX - self.startX));
+        self.setState({ x: x, moved: self.state.moved || x > 4 });
+      },
+      up: function () {
+        if (!self.state.dragging) return;
+        if (self.state.x > MAX * 0.8) self.setState({ shared: true, dragging: false, x: 0 });
+        else self.setState({ dragging: false, x: 0 });
+      },
+      cancel: function () { self.setState({ dragging: false, x: 0 }); },
+      tap: function () {
+        if (self.state.moved) { self.setState({ moved: false }); return; }
+        self.setState({ shared: true, x: 0 });
+      },
+      undo: function () { self.setState({ shared: false, x: 0, moved: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

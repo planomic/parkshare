@@ -20,6 +20,7 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 - `index.html`: the entire site. One self-contained file: inline styles, Google Fonts (Archivo for headings, Inter for body), a small vanilla-JS revenue calculator at the bottom. No framework, no bundler.
 - `CNAME`: custom domain for GitHub Pages. Don't delete it.
 - `docs/`: product docs (Markdown).
+- `design/`: snapshots of the design system and app screens; live versions are claude.ai artifacts (links in `design/README.md`).
 
 ## Working on the page
 
