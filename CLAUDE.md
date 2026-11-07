@@ -1,0 +1,56 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working in this repository.
+
+## What this is
+
+ParkShare24 (working name was "ParkMe") is a business that lets owners of private car parks (parking cellars in residential buildings, parking houses, office car parks) earn money from empty spaces. ParkShare24 supplies the license-plate (ANPR) cameras, the app, installation and operations at no cost to the owner. Drivers book and **pre-pay** for an empty space in the app and enter by license plate. Revenue is split between the tenants who rent the spaces, the property owner, and ParkShare24.
+
+This repo currently holds only the **public marketing landing page**, aimed at car-park owners (B2B). There is no app or backend yet.
+
+- Domain: `parkshare24.dk` (bought; DNS not yet pointed at GitHub Pages)
+- Hosting: GitHub Pages, static, no build step. The `CNAME` file holds the custom domain.
+- GitHub account: `planomic`. Repo not created yet: create it public (free Pages), push, then Settings → Pages → branch `main`, `/ (root)`, custom domain `parkshare24.dk`, Enforce HTTPS.
+- Original design: a Claude Design canvas (artifact "ParkMe landing page"). `index.html` was exported from it by hand; this file is now the source of truth.
+
+## Files
+
+- `index.html`: the entire site. One self-contained file: inline styles, Google Fonts (Archivo for headings, Inter for body), a small vanilla-JS revenue calculator at the bottom. No framework, no bundler.
+- `CNAME`: custom domain for GitHub Pages. Don't delete it.
+
+## Working on the page
+
+- Copy is in **Danish** (`lang="da"`). Keep it plain and direct, aimed at property owners, boards of housing associations (boligforeninger) and facility managers.
+- Look: warm off-white ground `#F3F1EC`, ink `#121417`, accent blue `#1846C8`, signal yellow `#F5C518`, muted text `#4A4F57`, hairlines `#D9D5CC`. Headings Archivo 700–800 with tight letter-spacing. No gradients, no emoji, no stock photos.
+- Must work at phone width (390 px) without horizontal scroll. Touch targets ≥ 44 px. Real `<button>`, `<a href>`, `<label for>`.
+- Preview locally: `python3 -m http.server 8000`, then open http://localhost:8000.
+- The calculator: inputs `#r-spaces`, `#r-hours`, `#r-occ`, `#r-price`; outputs `#o-*`. Formula: `spaces × empty hours/day × occupancy × hourly price × 365` = yearly revenue. Split: tenants 40 %, owner 30 %, ParkShare24 30 %. If you change the split, change it everywhere (hero card, calculator, its footnote, the bar legend).
+- Contact form posts to Formspree: `action="https://formspree.io/f/DIT-FORMSPREE-ID"` is a placeholder until the user creates a form on formspree.io.
+
+## Open TODOs
+
+- [ ] Rebrand the page from "ParkMe" to "ParkShare24" (logo mark, `<title>`, nav, footer, copy).
+- [ ] Replace placeholders: `[kontakt@parkme.dk]`, `[telefonnummer]`, `[CVR-nr.]`, Formspree ID.
+- [ ] Confirm business terms stated on the page: 0 kr. investment for owners, 40/30/30 split, trial period with free cancellation, equipment removed at no charge.
+- [ ] Create the GitHub repo, enable Pages, point DNS (below), enable HTTPS, verify the domain under the GitHub profile's Pages settings.
+- [ ] Have a lawyer approve the "Er det lovligt?" FAQ wording before launch.
+
+## DNS for parkshare24.dk (at the registrar)
+
+```
+A     @    185.199.108.153
+A     @    185.199.109.153
+A     @    185.199.110.153
+A     @    185.199.111.153
+CNAME www  planomic.github.io
+```
+Remove the registrar's default parking A/CNAME records on `@` and `www`.
+
+## Business and legal context (important for any copy or product decision)
+
+- **Danish rules on private parking (kontrolafgifter):** since 1 July 2025 a kontrolafgift on private parking must be placed on the car or handed to the driver on the spot; it may **not** be sent afterwards by post or e-Boks. So camera/ANPR systems cannot be used to issue fines after the fact. The Transport Ministry has said Motorregistret data may only be used for fines first given physically.
+- Therefore ParkShare24 earns on **pre-paid bookings, not fines.** Never write copy, or design flows, that rely on mailing fines or after-the-fact charges ("efteropkrævning") to plate owners. That is a contested grey area with many complaints.
+- Signage must clearly state the parking terms and the camera surveillance. Camera data falls under GDPR.
+- Tenants usually may not sublet their space without the owner's consent; the owner agreement with ParkShare24 must provide that consent and adjust tenant contracts.
+- Precedent used in sales copy: Copenhagen Municipality rents about 2,400 private parking spaces that residents book via the Visitors app.
+- Example numbers used on the page (assumptions, not market data): 60 spaces, 6 empty hours/day, 30 % occupancy, 25 kr./hour → about 985,000 kr. revenue/year, about 295,000 kr. to the owner, about 550 kr./month per tenant.
