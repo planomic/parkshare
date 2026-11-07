@@ -12,7 +12,7 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 
 - Domain: `parkshare24.dk` (registered at GoDaddy; DNS points at GitHub Pages)
 - Hosting: GitHub Pages, static, no build step. The `CNAME` file holds the custom domain.
-- GitHub repo: `planomic/parkshare` (public). Pages is on: branch `main`, `/ (root)`, custom domain `parkshare24.dk`. Enforce HTTPS once DNS resolves.
+- GitHub repo: `planomic/parkshare` (public). Pages is on: branch `main`, `/ (root)`, custom domain `parkshare24.dk`. HTTPS is enforced.
 - Original design: a Claude Design canvas (artifact "ParkMe landing page"). `index.html` was exported from it by hand; this file is now the source of truth.
 
 ## Files
@@ -39,7 +39,8 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 - [ ] Confirm business terms stated on the page: 0 kr. investment for owners, 40/20/40 split (tenants/owner/ParkShare24), trial period with free cancellation, equipment removed at no charge, then a 1-year commitment after the trial.
 - [x] Create the GitHub repo and enable Pages.
 - [x] Point DNS at GitHub (done 2026-11-07 at GoDaddy).
-- [ ] Enforce HTTPS once GitHub issues the certificate; verify the domain under the GitHub profile's Pages settings (TXT record).
+- [x] HTTPS enforced (Let's Encrypt via GitHub Pages, 2026-11-07; renews automatically).
+- [ ] Verify the domain under the GitHub profile's Pages settings (TXT record at GoDaddy).
 - [ ] Design the missing app screens: checklist in `design/README.md` ("Screens to do").
 - [x] "Appen" section on the landing page updated to match the canvas screens (2026-11-07). Update it again if those three screens change.
 - [ ] Have a lawyer approve the "Er det lovligt?" FAQ wording before launch.
