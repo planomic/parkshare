@@ -6,7 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working in this
 
 ParkShare24 (working name was "ParkMe") is a business that lets owners of private car parks (parking cellars in residential buildings, parking houses, office car parks) earn money from empty spaces. ParkShare24 supplies the license-plate (ANPR) cameras, the app, installation and operations at no cost to the owner. Drivers book and **pre-pay** for an empty space in the app and enter by license plate. Revenue is split between the tenants who rent the spaces, the property owner, and ParkShare24.
 
-This repo currently holds only the **public marketing landing page**, aimed at car-park owners (B2B). There is no app or backend yet.
+This repo currently holds only the **public marketing landing page**, aimed at car-park owners (B2B). There is no app or backend yet, but the product is essentially a mobile app.
+
+Product docs live in `docs/`: start with `docs/product.md` (users, ground rules, build order), then `docs/flows/` (driver, tenant, owner, admin), `docs/decisions.md` and `docs/open-questions.md`. Read them before designing or building app features, and keep them updated when a decision changes.
 
 - Domain: `parkshare24.dk` (registered at GoDaddy; DNS not yet pointed at GitHub Pages)
 - Hosting: GitHub Pages, static, no build step. The `CNAME` file holds the custom domain.
@@ -17,6 +19,7 @@ This repo currently holds only the **public marketing landing page**, aimed at c
 
 - `index.html`: the entire site. One self-contained file: inline styles, Google Fonts (Archivo for headings, Inter for body), a small vanilla-JS revenue calculator at the bottom. No framework, no bundler.
 - `CNAME`: custom domain for GitHub Pages. Don't delete it.
+- `docs/`: product docs (Markdown).
 
 ## Working on the page
 
