@@ -34,7 +34,7 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 ## Open TODOs
 
 - [x] Rebrand the page from "ParkMe" to "ParkShare24" (logo mark, `<title>`, nav, footer, copy).
-- [ ] Replace placeholders: `[kontakt@parkshare24.dk]`. (Done: phone 42 73 12 55; CVR 45420671, Primzahl Solutions ApS.)
+- [x] Placeholders filled: phone 42 73 12 55; CVR 45420671, Primzahl Solutions ApS. No email shown on the page for now (add one once email hosting for parkshare24.dk exists).
 - [ ] Confirm business terms stated on the page: 0 kr. investment for owners, 40/20/40 split (tenants/owner/ParkShare24), trial period with free cancellation, equipment removed at no charge.
 - [x] Create the GitHub repo and enable Pages.
 - [x] Point DNS at GitHub (done 2026-11-07 at GoDaddy).
