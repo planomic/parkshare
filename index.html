@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ParkMe – tjen penge på tomme p-pladser</title>
+<meta name="description" content="ParkMe installerer kameraer og app og driver det hele, så jeres tomme p-pladser kan bookes – og indtægten deles mellem ejendom, lejere og ParkMe.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%231846C8'/%3E%3Ctext x='20' y='29' font-family='Arial' font-weight='900' font-size='26' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F3F1EC}
+a{color:#1846C8}a:hover{color:#0F2F8A}
+input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
+</style>
+</head>
+<body>
+<div style="font-family: Inter, system-ui, sans-serif; color: #121417; background: #F3F1EC; width: 100%; min-height: 100vh; font-size: 17px; line-height: 1.6">
+
+<header style="border-bottom: 1px solid #D9D5CC">
+<nav style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #121417">
+<span style="width: 40px; height: 40px; background: #1846C8; color: #FFFFFF; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px">P</span>
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">ParkMe</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 15px">
+<a href="#saadan" style="color: #121417; text-decoration: none; padding: 10px 0">Sådan virker det</a>
+<a href="#beregner" style="color: #121417; text-decoration: none; padding: 10px 0">Beregner</a>
+<a href="#faq" style="color: #121417; text-decoration: none; padding: 10px 0">Spørgsmål</a>
+<a href="#kontakt" style="background: #121417; color: #FFFFFF; text-decoration: none; padding: 10px 18px; border-radius: 8px; font-weight: 600">Book en gennemgang</a>
+</div>
+</nav>
+</header>
+
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 520px; min-width: 0">
+<p style="margin: 0 0 20px; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>For ejere af p-huse og p-kældre</p>
+<h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 72px); line-height: 1.02; letter-spacing: -0.03em">Jeres tomme p-pladser kan tjene penge i aften.</h1>
+<p style="margin: 28px 0 0; font-size: 20px; color: #4A4F57; max-width: 560px">ParkMe installerer kameraer og app, og driver det hele. Når pladserne står tomme, kan bilister booke dem – og indtægten deles mellem jer, jeres lejere og os.</p>
+<div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#beregner" style="background: #1846C8; color: #FFFFFF; text-decoration: none; padding: 14px 24px; border-radius: 8px; font-weight: 600; font-size: 17px">Beregn jeres potentiale</a>
+<a href="#kontakt" style="background: transparent; color: #121417; text-decoration: none; padding: 13px 23px; border-radius: 8px; font-weight: 600; font-size: 17px; border: 1px solid #121417">Book en gennemgang</a>
+</div>
+<div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 15px; color: #121417">
+<span style="display: flex; align-items: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1846C8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>0 kr. i investering</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1846C8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Faste brugere har altid forrang</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1846C8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Prøveperiode med fri opsigelse</span>
+</div>
+</div>
+
+<div style="flex: 1 1 380px; min-width: 0; background: #121417; color: #F3F1EC; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap">
+<span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px">Eksempel: 60 pladser</span>
+<span style="font-size: 13px; color: #A9AEB6">6 ledige timer/døgn · 30 % belægning · 25 kr./t</span>
+</div>
+<div style="height: 1px; background: #2E3238"></div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; color: #A9AEB6">Til ejendommen pr. år</span>
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 48px; line-height: 1.05; letter-spacing: -0.02em">ca. 295.000 kr.</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="background: #1E2227; border-radius: 10px; padding: 16px">
+<div style="font-size: 13px; color: #A9AEB6">Pr. lejer pr. måned</div>
+<div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 26px">ca. 550 kr.</div>
+</div>
+<div style="background: #1E2227; border-radius: 10px; padding: 16px">
+<div style="font-size: 13px; color: #A9AEB6">Jeres udgift</div>
+<div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 26px">0 kr.</div>
+</div>
+</div>
+<div style="display: flex; height: 14px; border-radius: 7px; overflow: hidden" aria-hidden="true">
+<span style="flex: 40; background: #F5C518"></span><span style="flex: 30; background: #5B82F0"></span><span style="flex: 30; background: #6B7078"></span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: #D5D8DD">
+<span>Lejere 40 %</span><span>Ejendom 30 %</span><span>ParkMe 30 %</span>
+</div>
+<p style="margin: 0; font-size: 12px; color: #A9AEB6">Regneeksempel. Jeres tal afhænger af beliggenhed, åbningstider og efterspørgsel.</p>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border-top: 1px solid #D9D5CC; border-bottom: 1px solid #D9D5CC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px">
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.02em; max-width: 760px">Win, win, win. Alle får noget ud af en tom plads.</h2>
+<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+<div style="border: 1px solid #D9D5CC; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 15px; color: #1846C8; letter-spacing: 0.04em; text-transform: uppercase">Ejendommen</span>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2">Ny indtægt uden arbejde</h3>
+<p style="margin: 0; color: #4A4F57">Vi betaler udstyret, står for drift og kundeservice og udbetaler jeres andel hver måned med en klar opgørelse.</p>
+</div>
+<div style="border: 1px solid #D9D5CC; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 15px; color: #1846C8; letter-spacing: 0.04em; text-transform: uppercase">Lejerne</span>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2">Betalt for en plads, de ikke bruger</h3>
+<p style="margin: 0; color: #4A4F57">Lejeren melder sin plads ledig i appen, når bilen er væk – og får den største andel af indtægten. Pladsen er altid deres, når de kommer hjem.</p>
+</div>
+<div style="border: 1px solid #D9D5CC; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 15px; color: #1846C8; letter-spacing: 0.04em; text-transform: uppercase">Bilisterne</span>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2">En plads, der er klar</h3>
+<p style="margin: 0; color: #4A4F57">Bilister finder og booker en ledig plads i appen, kører ind på nummerplade og betaler kun for tiden. Ingen leden, ingen overraskelser.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="saadan" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px">
+<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57">Sådan virker det</p>
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.02em; max-width: 760px">Fra tom kælder til indtægt på fire trin.</h2>
+<ol style="list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 6px solid #121417">
+<li style="padding: 28px 24px 8px 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #1846C8">01</span>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Gennemgang</h3>
+<p style="margin: 0; color: #4A4F57">Vi ser på jeres anlæg, brugsmønstre og område og laver en konkret beregning af potentialet.</p>
+</li>
+<li style="padding: 28px 24px 8px 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #1846C8">02</span>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Installation</h3>
+<p style="margin: 0; color: #4A4F57">Vi monterer nummerpladekameraer ved ind- og udkørsel, skilte og eventuel portstyring. Typisk uden at lukke anlægget.</p>
+</li>
+<li style="padding: 28px 24px 8px 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #1846C8">03</span>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Pladser meldes ledige</h3>
+<p style="margin: 0; color: #4A4F57">I vælger tidsrummene, fx aften, nat og weekend. Lejere kan selv melde deres plads ledig i appen.</p>
+</li>
+<li style="padding: 28px 24px 8px 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #1846C8">04</span>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Booking og udbetaling</h3>
+<p style="margin: 0; color: #4A4F57">Bilister booker og betaler på forhånd i appen. Hver måned får I og lejerne jeres andel udbetalt.</p>
+</li>
+</ol>
+</section>
+
+<section id="beregner" style="background: #121417; color: #F3F1EC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 440px; min-width: 0">
+<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #A9AEB6">Beregner</p>
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.02em">Hvad er jeres tomme pladser værd?</h2>
+<p style="margin: 20px 0 0; color: #C3C7CD; max-width: 480px">Skub på tallene, så de passer til jeres anlæg. Vi regner det præcist igennem ved gennemgangen.</p>
+<div style="margin-top: 36px; display: flex; flex-direction: column; gap: 22px">
+<div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><label for="r-spaces" style="color: #D5D8DD">Antal pladser</label><span style="font-weight: 600" id="o-spaces">60</span></div>
+<input id="r-spaces" type="range" min="10" max="300" step="5" value="60">
+</div>
+<div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><label for="r-hours" style="color: #D5D8DD">Ledige timer pr. døgn</label><span style="font-weight: 600"><span id="o-hours">6</span> t</span></div>
+<input id="r-hours" type="range" min="2" max="16" step="1" value="6">
+</div>
+<div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><label for="r-occ" style="color: #D5D8DD">Belægning af ledige timer</label><span style="font-weight: 600"><span id="o-occ">30</span> %</span></div>
+<input id="r-occ" type="range" min="5" max="80" step="5" value="30">
+</div>
+<div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><label for="r-price" style="color: #D5D8DD">Timepris</label><span style="font-weight: 600"><span id="o-price">25</span> kr.</span></div>
+<input id="r-price" type="range" min="10" max="50" step="1" value="25">
+</div>
+</div>
+</div>
+
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="background: #F3F1EC; color: #121417; border-radius: 16px; padding: 32px">
+<div style="font-size: 15px; color: #4A4F57">Til ejendommen pr. år</div>
+<div style="font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(40px, 5vw, 60px); line-height: 1.05; letter-spacing: -0.02em"><span id="o-owner"></span></div>
+<div style="margin-top: 6px; font-size: 15px; color: #4A4F57">30 % af en omsætning på <span id="o-revenue"></span></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<div style="background: #1E2227; border-radius: 14px; padding: 22px">
+<div style="font-size: 14px; color: #A9AEB6">Til lejerne i alt / år</div>
+<div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px"><span id="o-tenants"></span></div>
+</div>
+<div style="background: #1E2227; border-radius: 14px; padding: 22px">
+<div style="font-size: 14px; color: #A9AEB6">Pr. lejer pr. måned</div>
+<div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px"><span id="o-perTenant"></span></div>
+</div>
+</div>
+<div style="background: #1E2227; border-radius: 14px; padding: 22px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
+<div>
+<div style="font-size: 14px; color: #A9AEB6">Jeres investering og drift</div>
+<div style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px">0 kr.</div>
+</div>
+<span style="font-size: 14px; color: #D5D8DD; max-width: 220px">ParkMe dækker kameraer, app, installation og drift.</span>
+</div>
+<p style="margin: 4px 0 0; font-size: 13px; color: #A9AEB6">Fordeling: lejere 40 %, ejendom 30 %, ParkMe 30 %. Vejledende beregning – ikke et tilbud.</p>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 96px 24px">
+<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57">Det står ParkMe for</p>
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.02em; max-width: 760px">Én leverandør. Hele løsningen.</h2>
+<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0; border-top: 1px solid #D9D5CC">
+<div style="padding: 28px 28px 28px 0; border-bottom: 1px solid #D9D5CC">
+<h3 style="margin: 0 0 8px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Nummerpladekameraer</h3>
+<p style="margin: 0; color: #4A4F57">Kameraer ved ind- og udkørsel genkender bookede biler. Kun registrerede brugere kommer ind.</p>
+</div>
+<div style="padding: 28px 28px 28px 0; border-bottom: 1px solid #D9D5CC">
+<h3 style="margin: 0 0 8px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">App til bilister og lejere</h3>
+<p style="margin: 0; color: #4A4F57">Bilister booker og betaler. Lejere melder deres plads ledig og ser deres indtjening.</p>
+</div>
+<div style="padding: 28px 28px 28px 0; border-bottom: 1px solid #D9D5CC">
+<h3 style="margin: 0 0 8px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Installation og skiltning</h3>
+<p style="margin: 0; color: #4A4F57">Montering, opsætning og tydelig skiltning af vilkår og kameraovervågning.</p>
+</div>
+<div style="padding: 28px 28px 28px 0; border-bottom: 1px solid #D9D5CC">
+<h3 style="margin: 0 0 8px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Drift og kundeservice</h3>
+<p style="margin: 0; color: #4A4F57">Vi overvåger systemet, håndterer henvendelser fra bilister og retter fejl. I skal intet gøre.</p>
+</div>
+<div style="padding: 28px 28px 28px 0; border-bottom: 1px solid #D9D5CC">
+<h3 style="margin: 0 0 8px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Månedlig rapport</h3>
+<p style="margin: 0; color: #4A4F57">Bookinger, belægning og udbetaling – samlet i et overblik, I kan dele med bestyrelsen.</p>
+</div>
+<div style="padding: 28px 28px 28px 0; border-bottom: 1px solid #D9D5CC">
+<h3 style="margin: 0 0 8px; font-family: Archivo, sans-serif; font-weight: 700; font-size: 21px">Fair og gennemsigtig model</h3>
+<p style="margin: 0; color: #4A4F57">Bilister betaler for p-tid på forhånd. Vi tjener på bookinger – ikke på bøder.</p>
+</div>
+</div>
+</section>
+
+<section style="background: #F5C518">
+<div style="max-width: 1200px; margin: 0 auto; padding: 64px 24px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
+<p style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.01em; max-width: 760px; color: #121417">Modellen er afprøvet: Københavns Kommune har lejet 2.400 private p-pladser, som beboere booker via en app.</p>
+<a href="#kontakt" style="background: #121417; color: #FFFFFF; text-decoration: none; padding: 14px 24px; border-radius: 8px; font-weight: 600">Hør hvordan det passer til jer</a>
+</div>
+</section>
+
+<section id="faq" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 320px; min-width: 0">
+<p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57">Spørgsmål</p>
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.02em">Det, ejere typisk spørger om.</h2>
+</div>
+<div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; border-top: 1px solid #D9D5CC">
+<details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
+<summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Mister lejerne deres plads?</summary>
+<p style="margin: 12px 0 0; color: #4A4F57">Nej. Faste lejere og ansatte har altid forrang. Der deles kun i de tidsrum, I vælger, eller når en lejer selv melder sin plads ledig.</p>
+</details>
+<details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
+<summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Hvad koster det os?</summary>
+<p style="margin: 12px 0 0; color: #4A4F57">Intet. ParkMe betaler kameraer, skilte, app, installation og drift. Vi tjener kun, når der kommer bookinger.</p>
+</details>
+<details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
+<summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Hvad med sikkerheden i kælderen?</summary>
+<p style="margin: 12px 0 0; color: #4A4F57">Kun bilister med en booking og en registreret nummerplade får adgang, og alle ind- og udkørsler logges. Mange anlæg får faktisk bedre overblik end i dag.</p>
+</details>
+<details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
+<summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Er det lovligt?</summary>
+<p style="margin: 12px 0 0; color: #4A4F57">Ja. Bilister betaler for parkering på forhånd, og vi sender ikke efterfølgende kontrolafgifter. Kameraovervågning skiltes og håndteres efter GDPR.</p>
+</details>
+<details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
+<summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Må lejerne udleje deres plads?</summary>
+<p style="margin: 12px 0 0; color: #4A4F57">Det kræver ejendommens accept, og det er netop det, aftalen med ParkMe giver. Vi hjælper med at tilpasse vilkårene i lejekontrakterne.</p>
+</details>
+<details style="border-bottom: 1px solid #D9D5CC; padding: 22px 0">
+<summary style="cursor: pointer; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; min-height: 28px">Hvad hvis det ikke virker for os?</summary>
+<p style="margin: 12px 0 0; color: #4A4F57">I starter med en prøveperiode med fri opsigelse. Er I ikke tilfredse, fjerner vi udstyret uden regning.</p>
+</details>
+</div>
+</section>
+
+<section id="kontakt" style="background: #FFFFFF; border-top: 1px solid #D9D5CC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 380px; min-width: 0">
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.02em">Få en gratis beregning for jeres anlæg.</h2>
+<p style="margin: 20px 0 0; color: #4A4F57; max-width: 440px">Vi vender tilbage inden for to hverdage og aftaler en gennemgang på stedet. Det er uforpligtende.</p>
+<p style="margin: 28px 0 0; color: #121417">[kontakt@parkme.dk] · [telefonnummer]</p>
+</div>
+<form action="https://formspree.io/f/DIT-FORMSPREE-ID" method="POST" style="flex: 1 1 460px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-name" style="font-size: 14px; font-weight: 600">Navn</label>
+<input id="f-name" name="navn" type="text" required autocomplete="name" style="height: 48px; padding: 0 14px; border: 1px solid #B9B4A9; border-radius: 8px; font: inherit; background: #FFFFFF">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-mail" style="font-size: 14px; font-weight: 600">E-mail</label>
+<input id="f-mail" name="email" type="email" required autocomplete="email" style="height: 48px; padding: 0 14px; border: 1px solid #B9B4A9; border-radius: 8px; font: inherit; background: #FFFFFF">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-prop" style="font-size: 14px; font-weight: 600">Ejendom og adresse</label>
+<input id="f-prop" name="ejendom" type="text" style="height: 48px; padding: 0 14px; border: 1px solid #B9B4A9; border-radius: 8px; font: inherit; background: #FFFFFF">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-spaces" style="font-size: 14px; font-weight: 600">Antal p-pladser</label>
+<input id="f-spaces" name="pladser" type="number" min="1" style="height: 48px; padding: 0 14px; border: 1px solid #B9B4A9; border-radius: 8px; font: inherit; background: #FFFFFF">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; grid-column: 1 / -1">
+<label for="f-type" style="font-size: 14px; font-weight: 600">Type anlæg</label>
+<select id="f-type" name="type" style="height: 48px; padding: 0 14px; border: 1px solid #B9B4A9; border-radius: 8px; font: inherit; background: #FFFFFF">
+<option>P-kælder i boligejendom</option>
+<option>P-hus</option>
+<option>Kontor- eller erhvervsejendom</option>
+<option>Andet</option>
+</select>
+</div>
+<button type="submit" style="grid-column: 1 / -1; height: 52px; background: #1846C8; color: #FFFFFF; border: 0; border-radius: 8px; font: inherit; font-weight: 600; cursor: pointer">Send og få en beregning</button>
+</form>
+</div>
+</section>
+
+<footer style="background: #121417; color: #C3C7CD">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px">
+<span style="display: flex; align-items: center; gap: 10px"><span style="width: 28px; height: 28px; background: #1846C8; color: #FFFFFF; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px">P</span><span style="font-family: Archivo, sans-serif; font-weight: 700; color: #F3F1EC">ParkMe</span></span>
+<span>Kamera, app, installation og drift af delte p-pladser · [CVR-nr.]</span>
+</div>
+</footer>
+
+</div>
+<script>
+(function(){
+  var ids=['spaces','hours','occ','price'];
+  function kr(n){return Math.round(n).toLocaleString('da-DK')+' kr.';}
+  function v(k){return Number(document.getElementById('r-'+k).value);}
+  function calc(){
+    ids.forEach(function(k){document.getElementById('o-'+k).textContent=v(k);});
+    var rev=v('spaces')*v('hours')*(v('occ')/100)*v('price')*365;
+    document.getElementById('o-revenue').textContent=kr(rev);
+    document.getElementById('o-owner').textContent=kr(rev*0.3);
+    document.getElementById('o-tenants').textContent=kr(rev*0.4);
+    document.getElementById('o-perTenant').textContent=kr(rev*0.4/v('spaces')/12);
+  }
+  ids.forEach(function(k){document.getElementById('r-'+k).addEventListener('input',calc);});
+  calc();
+})();
+</script>
+</body>
+</html>
