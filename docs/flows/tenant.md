@@ -16,7 +16,7 @@ Starts when the owner links the tenant to a space (owner flow O2).
 1. The exit camera reads the tenant's plate as the car leaves.
 2. Push notification: "Din plads er ledig. Del den, mens du er væk?"
 3. One question: "Hvornår er du tilbage?" Quick choices: *kl. 17*, *i aften*, *i morgen tidlig*, *vælg tid*. The tenant's usual return time is preselected.
-4. **Slide to share.** The space is bookable until a buffer (30–60 min) before the return time.
+4. **Slide to share.** The space is bookable until 30 min before the return time.
 5. Confirmation: "Delt til kl. 16.30. Du tjener ca. 20 kr." (Example: out at 8.12, back at 17 → 8.3 hours × 20 kr. × 30 % occupancy × 40 % share.)
 
 Rules:
