@@ -134,10 +134,10 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <section id="porten" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 96px">
 <p style="margin: 0 0 12px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57">Teknikken</p>
 <h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.02em; max-width: 760px">Sådan åbner porten.</h2>
-<p style="margin: 20px 0 0; max-width: 640px; color: #4A4F57">Kameraet læser nummerpladen og åbner porten direkte for dem, der har en booking eller en plads. Ingen app kan åbne porten alene.</p>
+<p style="margin: 20px 0 0; max-width: 640px; color: #4A4F57">Kameraet læser nummerpladen, og en lille computer på stedet åbner porten for dem, der har en booking eller en plads. Ingen app kan åbne porten alene.</p>
 <div style="margin-top: 48px; display: flex; flex-direction: column; gap: 32px">
 <!-- drawing:Gate -->
-<div style="overflow-x: auto; border-radius: 14px"><svg viewBox="0 0 1168 420" style="display: block; width: 100%; min-width: 640px; height: auto" role="img" aria-label="En bil kører hen mod porten. Kameraet over porten læser nummerpladen AB 12 345, tjekker bookingen og sender et signal direkte til porten, og bommen går op.">
+<div style="overflow-x: auto; border-radius: 14px"><svg viewBox="0 0 1168 420" style="display: block; width: 100%; min-width: 640px; height: auto" role="img" aria-label="En bil kører hen mod porten. Kameraet over porten læser nummerpladen AB 12 345, og gatewayen tjekker bookingen og sender et signal via relæet til porten, og bommen går op.">
     <!-- wall and floor -->
     <rect x="0" y="0" width="1168" height="340" fill="#E7E3DA"></rect>
     <rect x="0" y="340" width="1168" height="80" fill="#B9B4A9"></rect>
@@ -199,9 +199,19 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
       <text x="110" y="33" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="19" letter-spacing="1.5" fill="#121417">AB 12 345</text>
     </g>
 
-    <!-- wire straight from the camera to the gate -->
-    <path d="M 762 116 L 762 300 L 770 300" fill="none" stroke="#F5C518" stroke-width="4"></path>
-    <text x="752" y="296" text-anchor="end" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#121417">signal: åbn</text>
+    <!-- gateway on the wall: small computer and relay -->
+    <rect x="1096" y="150" width="56" height="120" rx="6" fill="#121417"></rect>
+    <rect x="1106" y="164" width="36" height="14" rx="3" fill="#2E3238"></rect>
+    <circle cx="1112" cy="171" r="3" fill="#F5C518"></circle>
+    <rect x="1106" y="190" width="36" height="14" rx="3" fill="#2E3238"></rect>
+    <circle cx="1112" cy="197" r="3" fill="#5B82F0"></circle>
+    <rect x="1106" y="216" width="36" height="14" rx="3" fill="#2E3238"></rect>
+    <text x="1124" y="294" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#121417">Gateway</text>
+    <!-- wires: camera to gateway, gateway to barrier -->
+    <path d="M 782 113 L 1124 113 L 1124 150" fill="none" stroke="#1846C8" stroke-width="3"></path>
+    <path d="M 1124 270 L 1124 316 L 810 316" fill="none" stroke="#F5C518" stroke-width="4"></path>
+    <text x="960" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#1846C8">billede af pladen</text>
+    <text x="960" y="308" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#121417">signal: åbn</text>
   </svg></div>
 <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px 32px; border-top: 6px solid #121417; padding-top: 20px">
     <li style="display: flex; flex-direction: column; gap: 6px">
@@ -211,13 +221,13 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
     </li>
     <li style="display: flex; flex-direction: column; gap: 6px">
       <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1; color: #1846C8">2</span>
-      <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px">Kameraet tjekker</span>
-      <span style="font-size: 14px; line-height: 1.5; color: #4A4F57">Kameraet ser, om bilen har en booking eller en plads lige nu.</span>
+      <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px">Gatewayen tjekker</span>
+      <span style="font-size: 14px; line-height: 1.5; color: #4A4F57">En lille computer på stedet ser, om pladen har en booking eller en plads lige nu.</span>
     </li>
     <li style="display: flex; flex-direction: column; gap: 6px">
       <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1; color: #1846C8">3</span>
-      <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px">Porten får signal</span>
-      <span style="font-size: 14px; line-height: 1.5; color: #4A4F57">Kameraet sender samme signal til porten som en almindelig trykknap.</span>
+      <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px">Relæet giver signal</span>
+      <span style="font-size: 14px; line-height: 1.5; color: #4A4F57">Relæet sender samme signal til porten som en almindelig trykknap.</span>
     </li>
     <li style="display: flex; flex-direction: column; gap: 6px">
       <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1; color: #1846C8">4</span>
