@@ -36,12 +36,22 @@
       "title": "Bilist · Kørt ind",
       "is_interactive": true,
       "radius": 32
+    },
+    "Signup.dc.html": {
+      "x": 0,
+      "y": 964,
+      "w": 390,
+      "h": 844,
+      "title": "Lejer · Tilmelding",
+      "is_interactive": true,
+      "radius": 32
     }
   },
   "order": [
     "Main.dc.html",
     "Driver.dc.html",
-    "Arrived.dc.html"
+    "Arrived.dc.html",
+    "Signup.dc.html"
   ],
   "notes": {},
   "designSystems": [

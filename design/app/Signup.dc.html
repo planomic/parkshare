@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<title>Tilmelding</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+body{margin:0}
+a{color:#1846C8}a:hover{color:#0F2F8A}
+button:focus-visible,input:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F1EC; color: #121417; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6; display: flex; flex-direction: column; overflow: hidden">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 16px 8px 8px; min-height: 44px">
+    <sc-if value="{{canBack}}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-label="Tilbage" onClick="{{back}}" style="width: 44px; height: 44px; border: 0; background: transparent; color: #121417; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
+      </button>
+    </sc-if>
+    <sc-if value="{{noBack}}" hint-placeholder-val="{{ true }}">
+      <span style="display: flex; align-items: center; gap: 10px; padding-left: 8px">
+        <span style="width: 28px; height: 28px; background: #1846C8; color: #FFFFFF; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px" aria-hidden="true">P</span>
+        <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -0.02em">ParkShare24</span>
+      </span>
+    </sc-if>
+    <sc-if value="{{showSteps}}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; align-items: center; gap: 10px">
+        <span style="font-size: 14px; font-weight: 600; color: #4A4F57">Trin {{stepNo}} af 4</span>
+        <div style="display: flex; gap: 4px" aria-hidden="true">
+          <sc-for list="{{dots}}" as="dot" hint-placeholder-count="4">
+            <span style="width: 18px; height: 6px; border-radius: 3px; background: {{dot.bg}}"></span>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+  </header>
+
+  <sc-if value="{{s0}}" hint-placeholder-val="{{ true }}">
+    <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 22px; padding: 16px 16px 0">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>Invitation</p>
+        <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Du har plads 47 i Kælder B.</h1>
+        <p style="margin: 0; color: #4A4F57">Ejendommen på Bernhardt Jensens Boulevard 87 er med i ParkShare24. Når du ikke bruger din plads, kan du dele den og få 40 % af hver booking.</p>
+      </div>
+      <section style="background: #FFFFFF; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3">Sådan virker det</h2>
+        <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">
+          <li>Når du kører ud, spørger appen, om pladsen må deles.</li>
+          <li>Bookinger slutter altid 30 min. før du er tilbage.</li>
+          <li>Pengene udbetales én gang om måneden.</li>
+        </ul>
+      </section>
+    </main>
+    <footer style="padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 10px">
+      <button type="button" onClick="{{next}}" style="height: 52px; border: 0; border-radius: 8px; background: #1846C8; color: #FFFFFF; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Bekræft med MitID</button>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57; text-align: center">Vi bruger MitID én gang for at sikre, at plads 47 er din.</p>
+    </footer>
+  </sc-if>
+
+  <sc-if value="{{s1}}" hint-placeholder-val="{{ false }}">
+    <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 22px; padding: 16px 16px 0">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: #121417">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1846C8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+          Bekræftet med MitID: Mette Holm
+        </p>
+        <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Hvilken bil holder på plads 47?</h1>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="su-plate" style="font-size: 14px; font-weight: 500">Nummerplade</label>
+        <input id="su-plate" type="text" autocapitalize="characters" autocomplete="off" value="{{plate}}" onChange="{{setPlate}}" style="height: 56px; padding: 0 14px; border: 1px solid #121417; border-radius: 8px; background: #FFFFFF; color: #121417; font-family: Archivo, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.08em; text-transform: uppercase">
+        <span style="font-size: 13px; line-height: 1.5; color: #4A4F57">Kun denne bil får appen til at spørge, om du vil dele pladsen, når den kører ud.</span>
+      </div>
+      <button type="button" style="align-self: flex-start; min-height: 44px; padding: 0; border: 0; background: transparent; color: #1846C8; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">+ Tilføj en bil mere</button>
+    </main>
+    <footer style="padding: 16px 16px 28px">
+      <button type="button" onClick="{{next}}" disabled="{{plateMissing}}" style="width: 100%; height: 52px; border: 0; border-radius: 8px; background: {{nextBg}}; color: {{nextFg}}; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Fortsæt</button>
+    </footer>
+  </sc-if>
+
+  <sc-if value="{{s2}}" hint-placeholder-val="{{ false }}">
+    <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 22px; padding: 16px 16px 0">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Hvor skal pengene hen?</h1>
+        <p style="margin: 0; color: #4A4F57">Vi udbetaler din andel én gang om måneden.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 5fr); gap: 12px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <label for="su-reg" style="font-size: 14px; font-weight: 500">Reg.nr.</label>
+          <input id="su-reg" type="text" inputmode="numeric" maxlength="4" autocomplete="off" value="{{reg}}" onChange="{{setReg}}" style="height: 52px; min-width: 0; padding: 0 12px; border: 1px solid #121417; border-radius: 8px; background: #FFFFFF; color: #121417; font: inherit; font-size: 17px; font-variant-numeric: tabular-nums">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <label for="su-acc" style="font-size: 14px; font-weight: 500">Kontonr.</label>
+          <input id="su-acc" type="text" inputmode="numeric" maxlength="10" autocomplete="off" value="{{acc}}" onChange="{{setAcc}}" style="height: 52px; min-width: 0; padding: 0 12px; border: 1px solid #121417; border-radius: 8px; background: #FFFFFF; color: #121417; font: inherit; font-size: 17px; font-variant-numeric: tabular-nums">
+        </div>
+      </div>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Kontoen skal stå i dit navn. Du kan ændre den senere under Indstillinger.</p>
+    </main>
+    <footer style="padding: 16px 16px 28px">
+      <button type="button" onClick="{{next}}" disabled="{{bankMissing}}" style="width: 100%; height: 52px; border: 0; border-radius: 8px; background: {{nextBg}}; color: {{nextFg}}; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Fortsæt</button>
+    </footer>
+  </sc-if>
+
+  <sc-if value="{{s3}}" hint-placeholder-val="{{ false }}">
+    <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 22px; padding: 16px 16px 0">
+      <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Sidste trin</h1>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <label for="su-c1" style="display: flex; gap: 14px; align-items: flex-start; background: #FFFFFF; border-radius: 14px; padding: 18px; cursor: pointer">
+          <input id="su-c1" type="checkbox" checked="{{c1}}" onChange="{{toggle1}}" style="width: 24px; height: 24px; margin: 2px 0 0; flex: 0 0 auto; accent-color: #1846C8">
+          <span style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-weight: 600">Jeg vil dele plads 47 på ParkShare24's vilkår</span>
+            <span style="font-size: 15px; line-height: 1.5; color: #4A4F57">Ejendommen har givet lov til, at pladsen må deles. Du bestemmer selv, hvornår.</span>
+            <a href="#vilkaar" style="font-size: 15px; font-weight: 600">Læs vilkårene</a>
+          </span>
+        </label>
+        <label for="su-c2" style="display: flex; gap: 14px; align-items: flex-start; background: #FFFFFF; border-radius: 14px; padding: 18px; cursor: pointer">
+          <input id="su-c2" type="checkbox" checked="{{c2}}" onChange="{{toggle2}}" style="width: 24px; height: 24px; margin: 2px 0 0; flex: 0 0 auto; accent-color: #1846C8">
+          <span style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-weight: 600">Kameraet må registrere, når {{plateShown}} kører ind og ud</span>
+            <span style="font-size: 15px; line-height: 1.5; color: #4A4F57">Det bruges kun til at spørge, om du vil dele pladsen. Ejendommen kan ikke se det, og vi sletter det efter [X] dage.</span>
+          </span>
+        </label>
+      </div>
+    </main>
+    <footer style="padding: 16px 16px 28px">
+      <button type="button" onClick="{{next}}" disabled="{{termsMissing}}" style="width: 100%; height: 52px; border: 0; border-radius: 8px; background: {{nextBg}}; color: {{nextFg}}; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Opret</button>
+    </footer>
+  </sc-if>
+
+  <sc-if value="{{s4}}" hint-placeholder-val="{{ false }}">
+    <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 22px; padding: 16px 16px 0">
+      <div style="height: 116px; background: #B9B4A9; border-radius: 14px; overflow: hidden; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr))" aria-hidden="true">
+        <div style="border-right: 4px solid #FFFFFF"></div>
+        <div style="display: flex; align-items: center; justify-content: center; background: #C9C5BB">
+          <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 40px; line-height: 1.2; color: #FFFFFF">47</span>
+        </div>
+        <div style="border-left: 4px solid #FFFFFF"></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>Klar</p>
+        <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Næste gang du kører ud, spørger vi, om du vil dele pladsen.</h1>
+        <p style="margin: 0; color: #4A4F57">Du kan også dele den nu, hvis du ved, at du er væk i dag.</p>
+      </div>
+    </main>
+    <footer style="padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 8px">
+      <a href="Main.dc.html" style="height: 52px; border-radius: 8px; background: #1846C8; color: #FFFFFF; text-decoration: none; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: center">Del pladsen nu</a>
+      <button type="button" onClick="{{restart}}" style="min-height: 44px; border: 0; background: transparent; color: #121417; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Færdig</button>
+    </footer>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { step: 0, plate: 'AB 12 345', reg: '', acc: '', c1: false, c2: false };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    var step = st.step;
+    var plateOk = st.plate.replace(/\s/g, '').length >= 2;
+    var bankOk = /^\d{4}$/.test(st.reg) && /^\d{6,10}$/.test(st.acc);
+    var termsOk = st.c1 && st.c2;
+    var ready = step === 1 ? plateOk : step === 2 ? bankOk : step === 3 ? termsOk : true;
+    var dots = [1, 2, 3, 4].map(function (n) { return { bg: n <= step + 1 ? '#1846C8' : '#D9D5CC' }; });
+    return {
+      s0: step === 0, s1: step === 1, s2: step === 2, s3: step === 3, s4: step === 4,
+      canBack: step > 0 && step < 4,
+      noBack: step === 0 || step === 4,
+      showSteps: step > 0 && step < 4,
+      stepNo: step + 1,
+      dots: dots,
+      plate: st.plate,
+      plateShown: st.plate.toUpperCase() || 'bilen',
+      reg: st.reg,
+      acc: st.acc,
+      c1: st.c1,
+      c2: st.c2,
+      plateMissing: !plateOk,
+      bankMissing: !bankOk,
+      termsMissing: !termsOk,
+      nextBg: ready ? '#1846C8' : '#D9D5CC',
+      nextFg: ready ? '#FFFFFF' : '#4A4F57',
+      setPlate: function (e) { self.setState({ plate: e.target.value }); },
+      setReg: function (e) { self.setState({ reg: e.target.value.replace(/\D/g, '').slice(0, 4) }); },
+      setAcc: function (e) { self.setState({ acc: e.target.value.replace(/\D/g, '').slice(0, 10) }); },
+      toggle1: function () { self.setState({ c1: !self.state.c1 }); },
+      toggle2: function () { self.setState({ c2: !self.state.c2 }); },
+      next: function () { if (ready) self.setState({ step: Math.min(4, step + 1) }); },
+      back: function () { self.setState({ step: Math.max(0, step - 1) }); },
+      restart: function () { self.setState({ step: 0, reg: '', acc: '', c1: false, c2: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

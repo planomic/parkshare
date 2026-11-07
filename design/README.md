@@ -20,4 +20,5 @@ The artifacts are the source of truth. After changing one, copy its files here a
 - `Main.dc.html`: tenant screen "Del din plads" (slide to share after driving out), 390 × 844. Open it on the canvas to try it; the file alone needs the canvas runtime to render.
 - `Driver.dc.html`: driver screen "Book plads" (tap Fra/Til to pick times with the phone's own time picker, latest 16.30, pay, then how to get in; if the gate does not open, call support), 390 × 844.
 - `Arrived.dc.html`: driver screen "Kørt ind" (welcome, Kælder B, plads 47 marked, booked until, extend +30 min/+1 t/+2 t up to 16.30, call support if the gate does not open), 390 × 844.
+- `Signup.dc.html`: tenant sign-up (invitation for plads 47, MitID check (simulated), license plate, payout account, consent to terms and camera logging, done), 390 × 844.
 - `canvas.json`: the canvas layout.
