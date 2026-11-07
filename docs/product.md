@@ -27,7 +27,7 @@ ParkShare24 is a mobile app that lets drivers book and pre-pay for empty spaces 
 - [Owner](flows/owner.md)
 - [Admin](flows/admin.md)
 
-Also: [Decisions](decisions.md) · [Open questions](open-questions.md) · [Hardware](hardware.md)
+Also: [Decisions](decisions.md) · [Open questions](open-questions.md) · [Hardware](hardware.md) · [Privacy](privacy.md)
 
 ## Build order
 
