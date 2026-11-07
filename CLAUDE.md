@@ -10,7 +10,7 @@ This repo currently holds only the **public marketing landing page**, aimed at c
 
 Product docs live in `docs/`: start with `docs/product.md` (users, ground rules, build order), then `docs/flows/` (driver, tenant, owner, admin), `docs/decisions.md` and `docs/open-questions.md`. Read them before designing or building app features, and keep them updated when a decision changes.
 
-- Domain: `parkshare24.dk` (registered at GoDaddy; DNS not yet pointed at GitHub Pages)
+- Domain: `parkshare24.dk` (registered at GoDaddy; DNS points at GitHub Pages)
 - Hosting: GitHub Pages, static, no build step. The `CNAME` file holds the custom domain.
 - GitHub repo: `planomic/parkshare` (public). Pages is on: branch `main`, `/ (root)`, custom domain `parkshare24.dk`. Enforce HTTPS once DNS resolves.
 - Original design: a Claude Design canvas (artifact "ParkMe landing page"). `index.html` was exported from it by hand; this file is now the source of truth.
@@ -37,7 +37,8 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 - [ ] Replace placeholders: `[kontakt@parkshare24.dk]`, `[telefonnummer]`, `[CVR-nr.]`.
 - [ ] Confirm business terms stated on the page: 0 kr. investment for owners, 40/20/40 split (tenants/owner/ParkShare24), trial period with free cancellation, equipment removed at no charge.
 - [x] Create the GitHub repo and enable Pages.
-- [ ] Point DNS at GoDaddy (below; domain is Active at Punktum dk since 2026-11-07, waiting for GoDaddy to unlock DNS editing), enable HTTPS, verify the domain under the GitHub profile's Pages settings.
+- [x] Point DNS at GitHub (done 2026-11-07 at GoDaddy).
+- [ ] Enforce HTTPS once GitHub issues the certificate; verify the domain under the GitHub profile's Pages settings (TXT record).
 - [ ] Have a lawyer approve the "Er det lovligt?" FAQ wording before launch.
 
 ## DNS for parkshare24.dk (at the registrar)
