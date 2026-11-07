@@ -44,7 +44,7 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
         <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
           <div style="display: flex; flex-direction: column">
             <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Fra</span>
-            <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15">kl. 9.00</span>
+            <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15">kl. 9.30</span>
           </div>
           <div style="display: flex; flex-direction: column">
             <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Til</span>
@@ -62,7 +62,7 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
             </button>
           </div>
         </div>
-        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Ledig til kl. 16.00.</p>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Ledig til kl. 16.30.</p>
       </section>
 
       <section style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 4px" aria-label="Bil">
@@ -91,7 +91,7 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
     <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 18px; padding: 8px 16px 0">
       <div style="display: flex; flex-direction: column; gap: 6px">
         <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>Booket og betalt</p>
-        <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Din plads venter kl. 9.00–{{end}}</h1>
+        <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Din plads venter kl. 9.30–{{end}}</h1>
         <p style="margin: 0; font-size: 15px; color: #4A4F57">Bernhardt Jensens Boulevard 87 · {{total}} kr. betalt</p>
       </div>
 
@@ -135,7 +135,7 @@ class Component extends DCLogic {
     return {
       headerTitle: this.state.booked ? 'Din booking' : 'Book plads',
       hours: h,
-      end: (9 + h) + '.00',
+      end: (9 + h) + '.30',
       total: h * PRICE,
       booked: this.state.booked,
       notBooked: !this.state.booked,
