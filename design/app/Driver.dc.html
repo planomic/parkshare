@@ -35,54 +35,19 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
         <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4A4F57">8000 Aarhus Ø · 3 ledige pladser · Højde maks. 2,10 m · Indkørsel fra gården</p>
       </div>
 
-      <section style="background: #FFFFFF; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 14px" aria-labelledby="time-h">
-        <h2 id="time-h" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Vælg tid</h2>
-
-        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 10px; background: #F3F1EC" role="radiogroup" aria-label="Start">
-          <button type="button" role="radio" aria-checked="{{nowChecked}}" onClick="{{pickNow}}" style="min-height: 44px; border: 0; border-radius: 8px; background: {{nowBg}}; color: {{nowFg}}; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Nu · kl. 9.30</button>
-          <button type="button" role="radio" aria-checked="{{laterChecked}}" onClick="{{pickLater}}" style="min-height: 44px; border: 0; border-radius: 8px; background: {{laterBg}}; color: {{laterFg}}; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Senere i dag</button>
-        </div>
-
-        <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 12px">
-          <div style="display: flex; flex-direction: column">
-            <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Fra – til</span>
-            <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; white-space: nowrap" aria-live="polite">{{startLabel}}–{{endLabel}}</span>
+      <section style="background: #FFFFFF; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px" aria-labelledby="time-h">
+        <h2 id="time-h" style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3">I dag</h2>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <label for="t-from" style="font-size: 14px; font-weight: 500; color: #4A4F57">Fra</label>
+            <input id="t-from" type="time" value="{{fromVal}}" min="08:15" max="16:00" step="900" onChange="{{setFrom}}" style="height: 52px; width: 100%; box-sizing: border-box; padding: 0 12px; border: 1px solid #121417; border-radius: 8px; background: #F3F1EC; color: #121417; font-family: Archivo, sans-serif; font-weight: 700; font-size: 24px; font-variant-numeric: tabular-nums">
           </div>
-          <sc-if value="{{later}}" hint-placeholder-val="{{ false }}">
-            <div style="display: flex; gap: 8px" role="group" aria-label="Flyt starttid">
-              <button type="button" aria-label="Start en halv time tidligere" onClick="{{earlier}}" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #121417; background: transparent; color: #121417; display: flex; align-items: center; justify-content: center; cursor: pointer">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg>
-              </button>
-              <button type="button" aria-label="Start en halv time senere" onClick="{{laterStep}}" style="width: 44px; height: 44px; border-radius: 8px; border: 1px solid #121417; background: transparent; color: #121417; display: flex; align-items: center; justify-content: center; cursor: pointer">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
-              </button>
-            </div>
-          </sc-if>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px" role="radiogroup" aria-label="Varighed">
-          <sc-for list="{{durations}}" as="d" hint-placeholder-count="4">
-            <button type="button" role="radio" aria-checked="{{d.checked}}" disabled="{{d.disabled}}" onClick="{{d.pick}}" style="min-height: 44px; padding: 0 4px; border-radius: 8px; border: 1px solid {{d.border}}; background: {{d.bg}}; color: {{d.fg}}; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; white-space: nowrap">{{d.label}}</button>
-          </sc-for>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 6px" role="img" aria-label="Pladsen er ledig fra kl. 8.15 til kl. 16.30. Din booking: kl. {{startLabel}} til {{endLabel}}.">
-          <div style="position: relative; height: 14px; border-radius: 999px; background: #D9D5CC; overflow: hidden">
-            <span style="position: absolute; top: 0; bottom: 0; left: {{freeLeft}}%; width: {{freeWidth}}%; background: #F5C518"></span>
-            <span style="position: absolute; top: 0; bottom: 0; left: {{bookLeft}}%; width: {{bookWidth}}%; background: #1846C8"></span>
-          </div>
-          <div style="position: relative; height: 18px; font-size: 13px; line-height: 18px; color: #4A4F57">
-            <span style="position: absolute; left: 0">8</span>
-            <span style="position: absolute; left: 40%; transform: translateX(-50%)">12</span>
-            <span style="position: absolute; left: 85%; transform: translateX(-50%); font-weight: 600; color: #121417">16.30</span>
-            <span style="position: absolute; right: 0">18</span>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; color: #4A4F57">
-            <span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 12px; height: 12px; border-radius: 3px; background: #1846C8"></span>Din booking</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 12px; height: 12px; border-radius: 3px; background: #F5C518"></span>Ledig</span>
-            <span>Ledig til kl. 16.30</span>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <label for="t-to" style="font-size: 14px; font-weight: 500; color: #4A4F57">Til</label>
+            <input id="t-to" type="time" value="{{toVal}}" min="08:30" max="16:30" step="900" onChange="{{setTo}}" style="height: 52px; width: 100%; box-sizing: border-box; padding: 0 12px; border: 1px solid #121417; border-radius: 8px; background: #F3F1EC; color: #121417; font-family: Archivo, sans-serif; font-weight: 700; font-size: 24px; font-variant-numeric: tabular-nums">
           </div>
         </div>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57">Tryk på tiden for at vælge. Ledig til kl. 16.30.</p>
       </section>
 
       <section style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 4px" aria-label="Bil">
@@ -146,60 +111,35 @@ button:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    // Times are minutes after midnight. Now = 9.30, the space is free 8.15–16.30.
-    this.state = { mode: 'now', start: 570, dur: 120, booked: false, gate: false };
+    // Times are minutes after midnight. The space is free 8.15–16.30.
+    this.state = { start: 570, end: 690, booked: false, gate: false };
   }
   renderVals() {
     var self = this;
-    var NOW = 570, FREE_FROM = 495, FREE_TO = 990, BAR_FROM = 480, BAR_TO = 1080;
-    var PRICE = 20;
-    var s = this.state.mode === 'now' ? NOW : this.state.start;
-    var dur = this.state.dur === 'max' ? FREE_TO - s : Math.min(this.state.dur, FREE_TO - s);
-    var e = s + dur;
+    var FREE_FROM = 495, FREE_TO = 990, PRICE = 20;
+    var s = this.state.start, e = this.state.end;
     function fmt(m) { var hh = Math.floor(m / 60), mm = m % 60; return hh + '.' + (mm < 10 ? '0' + mm : mm); }
-    function pct(m) { return ((m - BAR_FROM) / (BAR_TO - BAR_FROM) * 100).toFixed(2); }
-    var later = this.state.mode === 'later';
-    var opts = [
-      { id: 60, label: '1 t' },
-      { id: 120, label: '2 t' },
-      { id: 240, label: '4 t' },
-      { id: 'max', label: 'Til 16.30' }
-    ];
-    var durations = opts.map(function (o) {
-      var on = self.state.dur === o.id;
-      var off = o.id !== 'max' && s + o.id > FREE_TO;
-      return {
-        label: o.label,
-        checked: on ? 'true' : 'false',
-        disabled: off,
-        bg: on ? '#121417' : '#FFFFFF',
-        fg: on ? '#F3F1EC' : (off ? '#6B7078' : '#121417'),
-        border: off ? '#D9D5CC' : '#121417',
-        pick: function () { if (!off) self.setState({ dur: o.id }); }
-      };
-    });
-    var hours = dur / 60;
+    function val(m) { var hh = Math.floor(m / 60), mm = m % 60; return (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm); }
+    function parse(v) { var p = String(v || '').split(':'); return p.length === 2 ? Number(p[0]) * 60 + Number(p[1]) : NaN; }
+    var hours = (e - s) / 60;
     return {
       headerTitle: this.state.booked ? 'Din booking' : 'Book plads',
-      later: later,
-      nowChecked: later ? 'false' : 'true',
-      laterChecked: later ? 'true' : 'false',
-      nowBg: later ? 'transparent' : '#121417',
-      nowFg: later ? '#121417' : '#F3F1EC',
-      laterBg: later ? '#121417' : 'transparent',
-      laterFg: later ? '#F3F1EC' : '#121417',
-      pickNow: function () { self.setState({ mode: 'now' }); },
-      pickLater: function () { self.setState({ mode: 'later', start: Math.max(self.state.start, 720) }); },
-      earlier: function () { self.setState({ start: Math.max(NOW, self.state.start - 30) }); },
-      laterStep: function () { self.setState({ start: Math.min(FREE_TO - 60, self.state.start + 30) }); },
+      fromVal: val(s),
+      toVal: val(e),
+      setFrom: function (ev) {
+        var m = parse(ev.target.value); if (isNaN(m)) return;
+        m = Math.min(FREE_TO - 30, Math.max(FREE_FROM, m));
+        var end = Math.max(self.state.end, m + 30);
+        self.setState({ start: m, end: Math.min(FREE_TO, end) });
+      },
+      setTo: function (ev) {
+        var m = parse(ev.target.value); if (isNaN(m)) return;
+        m = Math.min(FREE_TO, Math.max(self.state.start + 30, m));
+        self.setState({ end: m });
+      },
       startLabel: fmt(s),
       endLabel: fmt(e),
-      durations: durations,
-      freeLeft: pct(FREE_FROM),
-      freeWidth: (pct(FREE_TO) - pct(FREE_FROM)).toFixed(2),
-      bookLeft: pct(s),
-      bookWidth: (pct(e) - pct(s)).toFixed(2),
-      hours: String(hours).replace('.', ','),
+      hours: String(Math.round(hours * 100) / 100).replace('.', ','),
       total: Math.round(hours * PRICE),
       booked: this.state.booked,
       notBooked: !this.state.booked,
