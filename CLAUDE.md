@@ -39,6 +39,7 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 - [x] Create the GitHub repo and enable Pages.
 - [x] Point DNS at GitHub (done 2026-11-07 at GoDaddy).
 - [ ] Enforce HTTPS once GitHub issues the certificate; verify the domain under the GitHub profile's Pages settings (TXT record).
+- [ ] When the app screens on the canvas are done, update the "Appen" section on the landing page to match them (price 20 kr./t, Aarhus example, grey bay row, "Billigste i området", one 30-min buffer).
 - [ ] Have a lawyer approve the "Er det lovligt?" FAQ wording before launch.
 
 ## DNS for parkshare24.dk (at the registrar)
