@@ -21,4 +21,5 @@ The artifacts are the source of truth. After changing one, copy its files here a
 - `Driver.dc.html`: driver screen "Book plads" (tap Fra/Til to pick times with the phone's own time picker, latest 16.30, pay, then how to get in; if the gate does not open, call support), 390 × 844.
 - `Arrived.dc.html`: driver screen "Kørt ind" (welcome, Kælder B, plads 47 marked, booked until, extend +30 min/+1 t/+2 t up to 16.30, call support if the gate does not open), 390 × 844.
 - `Signup.dc.html`: tenant sign-up (invitation for plads 47, MitID check (simulated), license plate, payout account, consent to terms and camera logging, done), 390 × 844.
+- `Owner.dc.html`: owner web page "Pladser og lejere" (summary, filter by status, invite / resend / approve MitID mismatch, add tenant, import list), 1280 wide, works at phone width.
 - `canvas.json`: the canvas layout.

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<title>Pladser og lejere</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+body{margin:0}
+a{color:#1846C8}a:hover{color:#0F2F8A}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height: 100%; background: #F3F1EC; color: #121417; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55">
+
+  <header style="background: #FFFFFF; border-bottom: 1px solid #D9D5CC">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+      <div style="display: flex; align-items: center; gap: 12px; min-width: 0">
+        <span style="width: 32px; height: 32px; background: #1846C8; color: #FFFFFF; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-family: Archivo, sans-serif; font-weight: 800; font-size: 19px" aria-hidden="true">P</span>
+        <span style="display: flex; flex-direction: column; line-height: 1.25; min-width: 0">
+          <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -0.02em">ParkShare24</span>
+          <span style="font-size: 14px; color: #4A4F57">Bernhardt Jensens Boulevard 87</span>
+        </span>
+      </div>
+      <nav aria-label="Ejer" style="display: flex; flex-wrap: wrap; gap: 4px">
+        <a href="#overblik" style="padding: 10px 14px; border-radius: 8px; color: #121417; text-decoration: none; font-weight: 500">Overblik</a>
+        <a href="#pladser" aria-current="page" style="padding: 10px 14px; border-radius: 8px; background: #121417; color: #F3F1EC; text-decoration: none; font-weight: 600">Pladser og lejere</a>
+        <a href="#udbetalinger" style="padding: 10px 14px; border-radius: 8px; color: #121417; text-decoration: none; font-weight: 500">Udbetalinger</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1200px; margin: 0 auto; padding: 32px 24px 64px; display: flex; flex-direction: column; gap: 28px">
+
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+        <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>Kælder B</p>
+        <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 36px; line-height: 1.1; letter-spacing: -0.02em">Pladser og lejere</h1>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <button type="button" style="min-height: 48px; padding: 0 18px; border-radius: 8px; border: 1px solid #121417; background: transparent; color: #121417; font: inherit; font-weight: 600; cursor: pointer">Importér liste</button>
+        <button type="button" onClick="{{toggleAdd}}" style="min-height: 48px; padding: 0 18px; border-radius: 8px; border: 0; background: #1846C8; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">Tilføj lejer</button>
+      </div>
+    </div>
+
+    <section aria-label="Status" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+      <div style="background: #FFFFFF; border-radius: 14px; padding: 20px 22px; display: flex; flex-direction: column">
+        <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Pladser</span>
+        <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.15">60</span>
+      </div>
+      <div style="background: #FFFFFF; border-radius: 14px; padding: 20px 22px; display: flex; flex-direction: column">
+        <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Lejere tilmeldt</span>
+        <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.15">41 <span style="font-size: 17px; font-weight: 600; color: #4A4F57">af 57</span></span>
+      </div>
+      <div style="background: #FFFFFF; border-radius: 14px; padding: 20px 22px; display: flex; flex-direction: column">
+        <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Deler deres plads</span>
+        <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.15">23</span>
+      </div>
+      <div style="background: #121417; color: #F3F1EC; border-radius: 14px; padding: 20px 22px; display: flex; flex-direction: column">
+        <span style="font-size: 14px; font-weight: 500; color: #C3C7CD">Jeres andel i oktober (20 %)</span>
+        <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.15">5.130 kr.</span>
+      </div>
+    </section>
+
+    <sc-if value="{{adding}}" hint-placeholder-val="{{ false }}">
+      <section aria-labelledby="add-h" style="background: #FFFFFF; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px">
+        <h2 id="add-h" style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3">Tilføj lejer</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <label for="ow-space" style="font-size: 14px; font-weight: 500">Plads</label>
+            <select id="ow-space" style="height: 48px; padding: 0 12px; border: 1px solid #121417; border-radius: 8px; background: #FFFFFF; color: #121417; font: inherit">
+              <option>43 (ingen lejer)</option>
+            </select>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <label for="ow-name" style="font-size: 14px; font-weight: 500">Navn</label>
+            <input id="ow-name" type="text" autocomplete="off" value="{{newName}}" onChange="{{setName}}" style="height: 48px; padding: 0 12px; border: 1px solid #121417; border-radius: 8px; background: #FFFFFF; color: #121417; font: inherit">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <label for="ow-contact" style="font-size: 14px; font-weight: 500">Mobil eller e-mail</label>
+            <input id="ow-contact" type="text" autocomplete="off" value="{{newContact}}" onChange="{{setContact}}" style="height: 48px; padding: 0 12px; border: 1px solid #121417; border-radius: 8px; background: #FFFFFF; color: #121417; font: inherit">
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+          <button type="button" onClick="{{addTenant}}" style="min-height: 48px; padding: 0 18px; border-radius: 8px; border: 0; background: #1846C8; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">Tilføj og send invitation</button>
+          <button type="button" onClick="{{toggleAdd}}" style="min-height: 48px; padding: 0 14px; border: 0; background: transparent; color: #121417; font: inherit; font-weight: 600; cursor: pointer">Annullér</button>
+          <span style="font-size: 14px; color: #4A4F57">Lejeren får en SMS eller e-mail med et link, der kun virker til denne plads.</span>
+        </div>
+      </section>
+    </sc-if>
+
+    <section id="pladser" aria-labelledby="list-h" style="background: #FFFFFF; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+        <h2 id="list-h" style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.3">Alle pladser</h2>
+        <div role="radiogroup" aria-label="Filtrér efter status" style="display: flex; flex-wrap: wrap; gap: 6px">
+          <sc-for list="{{filters}}" as="f" hint-placeholder-count="5">
+            <button type="button" role="radio" aria-checked="{{f.checked}}" onClick="{{f.pick}}" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid #121417; background: {{f.bg}}; color: {{f.fg}}; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap">{{f.label}} · {{f.count}}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="overflow-x: auto">
+        <table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 15px">
+          <thead>
+            <tr style="text-align: left; color: #4A4F57; font-size: 14px">
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #D9D5CC; width: 72px">Plads</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #D9D5CC">Lejer</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #D9D5CC">Kontakt</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #D9D5CC">Status</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #D9D5CC; text-align: right"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Handling</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+              <tr>
+                <td style="padding: 12px; border-bottom: 1px solid #D9D5CC; font-family: Archivo, sans-serif; font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums">{{r.space}}</td>
+                <td style="padding: 12px; border-bottom: 1px solid #D9D5CC">
+                  <span style="display: flex; flex-direction: column; line-height: 1.35">
+                    <span style="font-weight: 600">{{r.name}}</span>
+                    <span style="font-size: 13px; color: #4A4F57">{{r.sub}}</span>
+                  </span>
+                </td>
+                <td style="padding: 12px; border-bottom: 1px solid #D9D5CC; color: #4A4F57">{{r.contact}}</td>
+                <td style="padding: 12px; border-bottom: 1px solid #D9D5CC">
+                  <span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 999px; border: 1px solid {{r.pillBorder}}; background: {{r.pillBg}}; color: #121417; font-size: 14px; font-weight: 600; white-space: nowrap">{{r.status}}</span>
+                </td>
+                <td style="padding: 12px; border-bottom: 1px solid #D9D5CC; text-align: right">
+                  <sc-if value="{{r.hasAction}}" hint-placeholder-val="{{ true }}">
+                    <button type="button" onClick="{{r.act}}" style="min-height: 40px; padding: 0 14px; border-radius: 8px; border: 1px solid {{r.btnBorder}}; background: {{r.btnBg}}; color: {{r.btnFg}}; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap">{{r.action}}</button>
+                  </sc-if>
+                </td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin: 0; font-size: 14px; color: #4A4F57">Viser {{shown}} af 60 pladser. I kan ikke se, hvornår lejerne kører ind og ud. Det ser kun lejeren selv.</p>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1080}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      filter: 'all', adding: false, newName: '', newContact: '',
+      rows: [
+        { space: '41', name: 'Jonas Berg', contact: 'jonas@eksempel.dk', status: 'share' },
+        { space: '42', name: 'Sara Nielsen', contact: 'sara@eksempel.dk', status: 'joined' },
+        { space: '43', name: 'Ingen lejer', contact: '–', status: 'empty' },
+        { space: '44', name: 'Ali Hassan', contact: 'ali@eksempel.dk', status: 'invited', sent: '3. nov.' },
+        { space: '45', name: 'Karen Lund', contact: 'karen@eksempel.dk', status: 'new' },
+        { space: '46', name: 'Peter Juul', contact: 'peter@eksempel.dk', status: 'mismatch', mitid: 'Lise Juul' },
+        { space: '47', name: 'Mette Holm', contact: 'mette@eksempel.dk', status: 'share' },
+        { space: '48', name: 'Ole Krogh', contact: 'ole@eksempel.dk', status: 'new' }
+      ]
+    };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    var LABEL = { share: 'Deler', joined: 'Tilmeldt', invited: 'Inviteret', new: 'Ikke inviteret', mismatch: 'Kræver godkendelse', empty: 'Ledig plads' };
+    function update(space, patch) {
+      self.setState({ rows: self.state.rows.map(function (r) { return r.space === space ? Object.assign({}, r, patch) : r; }) });
+    }
+    var groups = {
+      all: function () { return true; },
+      new: function (r) { return r.status === 'new' || r.status === 'empty'; },
+      invited: function (r) { return r.status === 'invited'; },
+      mismatch: function (r) { return r.status === 'mismatch'; },
+      joined: function (r) { return r.status === 'joined' || r.status === 'share'; }
+    };
+    var filterDefs = [
+      { id: 'all', label: 'Alle' },
+      { id: 'new', label: 'Ikke inviteret' },
+      { id: 'invited', label: 'Inviteret' },
+      { id: 'mismatch', label: 'Kræver godkendelse' },
+      { id: 'joined', label: 'Tilmeldt' }
+    ];
+    var filters = filterDefs.map(function (f) {
+      var on = st.filter === f.id;
+      return {
+        label: f.label,
+        count: st.rows.filter(groups[f.id]).length,
+        checked: on ? 'true' : 'false',
+        bg: on ? '#121417' : '#FFFFFF',
+        fg: on ? '#F3F1EC' : '#121417',
+        pick: function () { self.setState({ filter: f.id }); }
+      };
+    });
+    var rows = st.rows.filter(groups[st.filter]).map(function (r) {
+      var action = '', act = null, primary = false, sub = '';
+      if (r.status === 'new') { action = 'Send invitation'; primary = true; act = function () { update(r.space, { status: 'invited', sent: 'i dag' }); }; }
+      if (r.status === 'invited') { action = 'Send igen'; sub = 'Sendt ' + r.sent; act = function () { update(r.space, { sent: 'i dag' }); }; }
+      if (r.status === 'mismatch') { action = 'Godkend'; primary = true; sub = 'MitID-navn: ' + r.mitid; act = function () { update(r.space, { status: 'joined' }); }; }
+      if (r.status === 'empty') { action = 'Tilføj lejer'; act = function () { self.setState({ adding: true }); }; }
+      if (r.status === 'share') sub = 'Deler i dag';
+      var pill = {
+        share: ['#F5C518', '#F5C518'], joined: ['#FFFFFF', '#121417'], invited: ['#F3F1EC', '#B9B4A9'],
+        new: ['#FFFFFF', '#B9B4A9'], mismatch: ['#FFFFFF', '#1846C8'], empty: ['#F3F1EC', '#F3F1EC']
+      }[r.status];
+      return {
+        space: r.space, name: r.name, contact: r.contact, sub: sub,
+        status: LABEL[r.status], pillBg: pill[0], pillBorder: pill[1],
+        hasAction: !!act, action: action, act: act,
+        btnBg: primary ? '#1846C8' : 'transparent', btnFg: primary ? '#FFFFFF' : '#121417', btnBorder: primary ? '#1846C8' : '#121417'
+      };
+    });
+    return {
+      filters: filters,
+      rows: rows,
+      shown: st.rows.length,
+      adding: st.adding,
+      newName: st.newName,
+      newContact: st.newContact,
+      toggleAdd: function () { self.setState({ adding: !self.state.adding }); },
+      setName: function (e) { self.setState({ newName: e.target.value }); },
+      setContact: function (e) { self.setState({ newContact: e.target.value }); },
+      addTenant: function () {
+        var name = self.state.newName.trim() || 'Ny lejer';
+        var contact = self.state.newContact.trim() || '–';
+        update('43', { name: name, contact: contact, status: 'invited', sent: 'i dag' });
+        self.setState({ adding: false, newName: '', newContact: '' });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

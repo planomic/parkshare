@@ -45,13 +45,23 @@
       "title": "Lejer · Tilmelding",
       "is_interactive": true,
       "radius": 32
+    },
+    "Owner.dc.html": {
+      "x": 470,
+      "y": 964,
+      "w": 1280,
+      "h": 1080,
+      "title": "Ejer · Pladser og lejere",
+      "is_interactive": true,
+      "expand": "fill"
     }
   },
   "order": [
     "Main.dc.html",
     "Driver.dc.html",
     "Arrived.dc.html",
-    "Signup.dc.html"
+    "Signup.dc.html",
+    "Owner.dc.html"
   ],
   "notes": {},
   "designSystems": [
