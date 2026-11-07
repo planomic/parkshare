@@ -36,8 +36,12 @@ function render(file, idPrefix) {
   body = body.replace(/<sc-for list="\{\{\s*([\w.]+)\s*\}\}" as="(\w+)"[^>]*>([\s\S]*?)<\/sc-for>/g,
     (_, list, as, inner) => (get(list, vals) || [])
       .map((item, i) => fill(inner, Object.assign({}, vals, { [as]: item, $index: i }))).join(''));
-  body = body.replace(/<sc-if value="\{\{\s*([\w.]+)\s*\}\}"[^>]*>([\s\S]*?)<\/sc-if>/g,
-    (_, v, inner) => (get(v, vals) ? inner : ''));
+  // Innermost first, so conditions inside conditions work.
+  const ifRe = /<sc-if value="\{\{\s*([\w.]+)\s*\}\}"[^>]*>((?:(?!<sc-if)[\s\S])*?)<\/sc-if>/g;
+  for (let prev = null; prev !== body;) {
+    prev = body;
+    body = body.replace(ifRe, (_, v, inner) => (get(v, vals) ? inner : ''));
+  }
 
   // A picture of the app: no event handlers.
   body = body.replace(/\s+on[A-Z]\w*="\{\{[^}]*\}\}"/g, '');

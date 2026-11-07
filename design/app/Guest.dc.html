@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<title>Inviter gæst</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+body{margin:0}
+a{color:#1846C8}a:hover{color:#0F2F8A}
+button:focus-visible,input:focus-visible{outline:2px solid #1846C8;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F3F1EC; color: #121417; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6; display: flex; flex-direction: column; overflow: hidden">
+
+  <header style="display: flex; align-items: center; gap: 4px; padding: 20px 16px 4px 8px">
+    <button type="button" aria-label="Tilbage" onClick="{{back}}" style="width: 44px; height: 44px; border: 0; background: transparent; color: #121417; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
+    </button>
+    <span style="font-size: 15px; font-weight: 600">Inviter gæst</span>
+  </header>
+
+  <sc-if value="{{editing}}" hint-placeholder-val="{{ true }}">
+    <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 16px; padding: 8px 16px 0">
+      <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Hvem kommer på besøg?</h1>
+
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 10px; background: #FFFFFF" role="radiogroup" aria-label="Gæstens bil">
+        <button type="button" role="radio" aria-checked="{{plateChecked}}" onClick="{{pickPlate}}" style="min-height: 44px; border: 0; border-radius: 8px; background: {{plateBg}}; color: {{plateFg}}; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Jeg kender pladen</button>
+        <button type="button" role="radio" aria-checked="{{linkChecked}}" onClick="{{pickLink}}" style="min-height: 44px; border: 0; border-radius: 8px; background: {{linkBg}}; color: {{linkFg}}; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Send link til gæsten</button>
+      </div>
+
+      <sc-if value="{{byPlate}}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <label for="g-plate" style="font-size: 14px; font-weight: 500">Gæstens nummerplade</label>
+          <input id="g-plate" type="text" autocapitalize="characters" autocomplete="off" value="{{plate}}" onChange="{{setPlate}}" style="height: 52px; padding: 0 14px; border: 1px solid #121417; border-radius: 8px; background: #FFFFFF; color: #121417; font-family: Archivo, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.08em; text-transform: uppercase">
+        </div>
+      </sc-if>
+      <sc-if value="{{byLink}}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <label for="g-phone" style="font-size: 14px; font-weight: 500">Gæstens mobilnummer</label>
+          <input id="g-phone" type="tel" inputmode="tel" autocomplete="off" value="{{phone}}" onChange="{{setPhone}}" style="height: 52px; padding: 0 14px; border: 1px solid #121417; border-radius: 8px; background: #FFFFFF; color: #121417; font: inherit; font-size: 20px; font-variant-numeric: tabular-nums">
+          <span style="font-size: 13px; line-height: 1.5; color: #4A4F57">Gæsten får en SMS og skriver selv sin nummerplade.</span>
+        </div>
+      </sc-if>
+
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 14px; font-weight: 500">Hvornår?</span>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px" role="radiogroup" aria-label="Dag">
+          <sc-for list="{{days}}" as="d" hint-placeholder-count="3">
+            <button type="button" role="radio" aria-checked="{{d.checked}}" onClick="{{d.pick}}" style="min-height: 44px; padding: 0 4px; border-radius: 8px; border: 1px solid #121417; background: {{d.bg}}; color: {{d.fg}}; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; white-space: nowrap">{{d.label}}</button>
+          </sc-for>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <label for="g-from" style="font-size: 13px; color: #4A4F57">Fra</label>
+            <input id="g-from" type="time" value="{{fromVal}}" step="900" onChange="{{setFrom}}" style="height: 48px; width: 100%; box-sizing: border-box; padding: 0 12px; border: 1px solid #121417; border-radius: 8px; background: #FFFFFF; color: #121417; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <label for="g-to" style="font-size: 13px; color: #4A4F57">Til</label>
+            <input id="g-to" type="time" value="{{toVal}}" step="900" onChange="{{setTo}}" style="height: 48px; width: 100%; box-sizing: border-box; padding: 0 12px; border: 1px solid #121417; border-radius: 8px; background: #FFFFFF; color: #121417; font-family: Archivo, sans-serif; font-weight: 700; font-size: 20px">
+          </div>
+        </div>
+      </div>
+
+      <section style="background: #FFFFFF; border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px" aria-label="Plads og pris">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px">
+          <div style="display: flex; flex-direction: column">
+            <span style="font-size: 13px; color: #4A4F57">Ledig plads til gæsten</span>
+            <span style="font-family: Archivo, sans-serif; font-weight: 700; font-size: 22px; line-height: 1.2">Plads 52 · Kælder B</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end">
+            <span style="font-size: 13px; color: #4A4F57">{{hours}} t × 20 kr.</span>
+            <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 22px; line-height: 1.2">{{price}} kr.</span>
+          </div>
+        </div>
+        <label for="g-earn" style="display: flex; align-items: center; gap: 12px; border-top: 1px solid #D9D5CC; padding-top: 10px; cursor: pointer">
+          <input id="g-earn" type="checkbox" checked="{{useEarn}}" onChange="{{toggleEarn}}" style="width: 22px; height: 22px; margin: 0; flex: 0 0 auto; accent-color: #1846C8">
+          <span style="display: flex; flex-direction: column; line-height: 1.35">
+            <span style="font-size: 15px; font-weight: 600">Betal med din indtjening</span>
+            <span style="font-size: 13px; color: #4A4F57">Du har tjent 350 kr. denne måned</span>
+          </span>
+        </label>
+      </section>
+    </main>
+
+    <footer style="padding: 14px 16px 28px; display: flex; flex-direction: column; gap: 8px">
+      <button type="button" onClick="{{invite}}" disabled="{{notReady}}" style="height: 52px; border: 0; border-radius: 8px; background: {{btnBg}}; color: {{btnFg}}; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">{{btnLabel}}</button>
+      <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A4F57; text-align: center">Du har ansvaret for din gæst. Bookingen slutter kl. {{toLabel}}.</p>
+    </footer>
+  </sc-if>
+
+  <sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+    <main style="flex: 1 1 auto; display: flex; flex-direction: column; gap: 18px; padding: 8px 16px 0">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #4A4F57"><span style="width: 28px; height: 6px; background: #F5C518; display: inline-block"></span>Gæst inviteret</p>
+        <h1 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Plads 52 er klar til din gæst {{dayLower}} kl. {{fromLabel}}–{{toLabel}}.</h1>
+        <p style="margin: 0; font-size: 15px; color: #4A4F57">{{paidLine}}</p>
+      </div>
+
+      <section style="display: flex; flex-direction: column; gap: 8px" aria-label="SMS til gæsten">
+        <span style="font-size: 14px; font-weight: 500; color: #4A4F57">Din gæst får denne SMS</span>
+        <div style="align-self: flex-start; max-width: 320px; background: #FFFFFF; border-radius: 18px 18px 18px 6px; padding: 14px 16px; font-size: 15px; line-height: 1.5">
+          <span style="display: block; font-weight: 600">ParkShare24</span>
+          <span style="display: block">Mette har inviteret dig til at parkere {{dayLower}} kl. {{fromLabel}}–{{toLabel}}.</span>
+          <span style="display: block; margin-top: 6px">Bernhardt Jensens Boulevard 87, 8000 Aarhus Ø. Kør ind fra gården, Kælder B, plads 52.</span>
+          <span style="display: block; margin-top: 6px">{{smsPlateLine}}</span>
+          <span style="display: block; margin-top: 6px">Hjælp: 42 73 12 55</span>
+        </div>
+      </section>
+    </main>
+
+    <footer style="padding: 14px 16px 28px; display: flex; flex-direction: column; gap: 8px">
+      <button type="button" onClick="{{again}}" style="height: 52px; border-radius: 8px; border: 1px solid #121417; background: transparent; color: #121417; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Inviter en til</button>
+      <button type="button" style="min-height: 44px; border: 0; background: transparent; color: #121417; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Færdig</button>
+    </footer>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    // Minutes after midnight. Example: Saturday visit 14.00–22.00.
+    this.state = { mode: 'plate', plate: 'CD 45 678', phone: '', day: 'sat', from: 840, to: 1320, useEarn: true, sent: false };
+  }
+  renderVals() {
+    var self = this;
+    var st = this.state;
+    var PRICE = 20, EARNED = 350;
+    function fmt(m) { var hh = Math.floor(m / 60), mm = m % 60; return hh + '.' + (mm < 10 ? '0' + mm : mm); }
+    function val(m) { var hh = Math.floor(m / 60), mm = m % 60; return (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm); }
+    function parse(v) { var p = String(v || '').split(':'); return p.length === 2 ? Number(p[0]) * 60 + Number(p[1]) : NaN; }
+    var dayDefs = [
+      { id: 'today', label: 'I dag', lower: 'i dag' },
+      { id: 'tomorrow', label: 'I morgen', lower: 'i morgen' },
+      { id: 'sat', label: 'Lør. 15. nov.', lower: 'lørdag 15. nov.' }
+    ];
+    var day = dayDefs.filter(function (d) { return d.id === st.day; })[0];
+    var days = dayDefs.map(function (d) {
+      var on = d.id === st.day;
+      return { label: d.label, checked: on ? 'true' : 'false', bg: on ? '#121417' : '#FFFFFF', fg: on ? '#F3F1EC' : '#121417',
+        pick: function () { self.setState({ day: d.id }); } };
+    });
+    var hours = Math.max(0, (st.to - st.from) / 60);
+    var price = Math.round(hours * PRICE);
+    var fromEarn = st.useEarn ? Math.min(price, EARNED) : 0;
+    var toPay = price - fromEarn;
+    var byPlate = st.mode === 'plate';
+    var ready = hours > 0 && (byPlate ? st.plate.replace(/\s/g, '').length >= 2 : st.phone.replace(/\D/g, '').length >= 8);
+    var btnLabel = toPay > 0 ? 'Inviter og betal ' + toPay + ' kr.' : 'Inviter gæst';
+    var paidLine = fromEarn > 0 && toPay === 0 ? price + ' kr. er trukket fra din indtjening.'
+      : fromEarn > 0 ? fromEarn + ' kr. fra din indtjening og ' + toPay + ' kr. med MobilePay.'
+      : price + ' kr. betalt med MobilePay.';
+    return {
+      editing: !st.sent, sent: st.sent,
+      byPlate: byPlate, byLink: !byPlate,
+      plateChecked: byPlate ? 'true' : 'false', linkChecked: byPlate ? 'false' : 'true',
+      plateBg: byPlate ? '#121417' : 'transparent', plateFg: byPlate ? '#F3F1EC' : '#121417',
+      linkBg: byPlate ? 'transparent' : '#121417', linkFg: byPlate ? '#121417' : '#F3F1EC',
+      pickPlate: function () { self.setState({ mode: 'plate' }); },
+      pickLink: function () { self.setState({ mode: 'link' }); },
+      plate: st.plate, phone: st.phone,
+      setPlate: function (e) { self.setState({ plate: e.target.value }); },
+      setPhone: function (e) { self.setState({ phone: e.target.value }); },
+      days: days, dayLower: day.lower,
+      fromVal: val(st.from), toVal: val(st.to), fromLabel: fmt(st.from), toLabel: fmt(st.to),
+      setFrom: function (e) { var m = parse(e.target.value); if (!isNaN(m)) self.setState({ from: m, to: Math.max(self.state.to, m + 30) }); },
+      setTo: function (e) { var m = parse(e.target.value); if (!isNaN(m)) self.setState({ to: Math.max(self.state.from + 30, m) }); },
+      hours: String(Math.round(hours * 100) / 100).replace('.', ','),
+      price: price,
+      useEarn: st.useEarn,
+      toggleEarn: function () { self.setState({ useEarn: !self.state.useEarn }); },
+      notReady: !ready,
+      btnBg: ready ? '#1846C8' : '#D9D5CC', btnFg: ready ? '#FFFFFF' : '#4A4F57',
+      btnLabel: btnLabel,
+      paidLine: paidLine,
+      smsPlateLine: byPlate ? 'Kør ind på din nummerplade ' + st.plate.toUpperCase() + '. Porten åbner selv.' : 'Skriv din nummerplade her: parkshare24.dk/g/7K3Q. Porten åbner selv.',
+      invite: function () { if (ready) self.setState({ sent: true }); },
+      again: function () { self.setState({ sent: false, plate: '', phone: '' }); },
+      back: function () { if (self.state.sent) self.setState({ sent: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

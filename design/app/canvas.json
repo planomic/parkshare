@@ -61,6 +61,15 @@
       "w": 1280,
       "h": 800,
       "title": "Sådan åbner porten"
+    },
+    "Guest.dc.html": {
+      "x": 1410,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "Lejer · Inviter gæst",
+      "is_interactive": true,
+      "radius": 32
     }
   },
   "order": [
@@ -69,7 +78,8 @@
     "Arrived.dc.html",
     "Signup.dc.html",
     "Owner.dc.html",
-    "Gate.dc.html"
+    "Gate.dc.html",
+    "Guest.dc.html"
   ],
   "notes": {},
   "designSystems": [

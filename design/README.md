@@ -23,6 +23,7 @@ The artifacts are the source of truth. After changing one, copy its files here a
 - `Signup.dc.html`: tenant sign-up (invitation for plads 47, MitID check (simulated), license plate, payout account, consent to terms and camera logging, done), 390 × 844.
 - `Owner.dc.html`: owner web page "Pladser og lejere" (summary, filter by status, invite / resend / approve MitID mismatch, add tenant, import list), 1280 wide, works at phone width.
 - `Gate.dc.html`: drawing "Sådan åbner porten" (camera reads the plate, gateway checks, relay signals, barrier opens; the gateway is not called a cabinet), 1280 × 800.
+- `Guest.dc.html`: tenant screen "Inviter gæst" (guest's plate or SMS link, day and time, free space and price, pay with sharing earnings; confirmation with the guest's SMS), 390 × 844.
 - `canvas.json`: the canvas layout.
 
 ## Updating the website's app screens
@@ -35,7 +36,7 @@ The "Appen" section of `index.html` shows `Main`, `Driver` and `Arrived` exactly
 
 ## Screens to do
 
-Done: tenant slide to share (`Main`), driver booking (`Driver`), driver arrived (`Arrived`), tenant sign-up (`Signup`), owner spaces and tenants (`Owner`).
+Done: tenant slide to share (`Main`), driver booking (`Driver`), driver arrived (`Arrived`), tenant sign-up (`Signup`), owner spaces and tenants (`Owner`), tenant invites a guest (`Guest`), drawing of the gate (`Gate`).
 
 ### Pilot
 - [ ] Driver: find a car park (search or map, free spaces and price per car park).
@@ -43,7 +44,7 @@ Done: tenant slide to share (`Main`), driver booking (`Driver`), driver arrived 
 - [ ] Tenant: push notification on the lock screen ("Din plads er ledig. Del den, mens du er væk?") that opens slide to share.
 - [ ] Support: admin screen (look up plate or booking, see camera image, open the gate remotely, log who opened it).
 
-- [ ] Tenant: "Inviter gæst" (pick time, guest plate or SMS link, price, pay or use earnings, confirmation; the guest's SMS).
+- [x] Tenant: "Inviter gæst" (`Guest`).
 - [ ] Owner: car park mode setting ("Åben" / "Kun lejere og gæster").
 
 ### Before scaling
