@@ -4,6 +4,8 @@ Newest first. Write down what was decided and why, so it is not reopened by acci
 
 ## 2026-11-07
 
+- **Revenue split: tenants 40 %, owner 20 %, ParkShare24 40 %** (was 40/30/30). Tenants' share stays highest because they must release their spaces for the business to work. ParkShare24 carries the cameras, installation, app and operations. Owner example on the landing page drops to about 197,000 kr./year.
+- **Price is always the cheapest in the area.** Drivers make a little more effort to park in a private cellar (finding the entrance, booking ahead), so the price must beat nearby street parking and parking houses for the same time. Pricing is set by ParkShare24 from local prices, not freely by the owner. The calculator's 25 kr./hour is an example and must be checked against each area.
 - **Earn on pre-paid bookings, never on fines.** Danish rules since 1 July 2025 forbid sending kontrolafgifter afterwards. After-the-fact charging is a contested grey area with many complaints.
 - **Main way to share is "slide to share" when the tenant drives out.** Asking at the moment the space becomes empty turns sharing into a one-swipe habit. Scheduling ahead is secondary. Automatic sharing comes later for regular patterns.
 - **Bookings end 30–60 minutes before the tenant's return time.** Protects the guarantee that the tenant always gets their space back. Exact buffer to be tuned in the pilot.

@@ -17,7 +17,7 @@ Starts when the owner links the tenant to a space (owner flow O2).
 2. Push notification: "Din plads er ledig. Del den, mens du er væk?"
 3. One question: "Hvornår er du tilbage?" Quick choices: *kl. 17*, *i aften*, *i morgen tidlig*, *vælg tid*. The tenant's usual return time is preselected.
 4. **Slide to share.** The space is bookable until a buffer (30–60 min) before the return time.
-5. Confirmation: "Delt til kl. 16.30. Du tjener ca. 45 kr."
+5. Confirmation: "Delt til kl. 16.30. Du tjener ca. 25 kr." (Example: out at 8.12, back at 17 → 8.3 hours × 25 kr. × 30 % occupancy × 40 % share.)
 
 Rules:
 - Skip the notification for short trips (if the tenant usually returns within about an hour).
@@ -37,6 +37,6 @@ The tenant must always get a space.
 4. If no space is free at all: to decide (see open questions).
 
 ## T5. Earnings and payouts
-- "Du har tjent 312 kr. denne måned."
+- "Du har tjent 550 kr. denne måned." (Matches the landing page example: about 550 kr. per tenant per month.)
 - History per booking. Monthly payout to the tenant's bank account.
 - When the tenant moves out (owner flow O4), outstanding earnings are paid out.

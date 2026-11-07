@@ -58,7 +58,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <div style="height: 1px; background: #2E3238"></div>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 14px; color: #A9AEB6">Til ejendommen pr. år</span>
-<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 48px; line-height: 1.05; letter-spacing: -0.02em">ca. 295.000 kr.</span>
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 48px; line-height: 1.05; letter-spacing: -0.02em">ca. 197.000 kr.</span>
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
 <div style="background: #1E2227; border-radius: 10px; padding: 16px">
@@ -71,10 +71,10 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 </div>
 </div>
 <div style="display: flex; height: 14px; border-radius: 7px; overflow: hidden" aria-hidden="true">
-<span style="flex: 40; background: #F5C518"></span><span style="flex: 30; background: #5B82F0"></span><span style="flex: 30; background: #6B7078"></span>
+<span style="flex: 40; background: #F5C518"></span><span style="flex: 20; background: #5B82F0"></span><span style="flex: 40; background: #6B7078"></span>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: #D5D8DD">
-<span>Lejere 40 %</span><span>Ejendom 30 %</span><span>ParkShare24 30 %</span>
+<span>Lejere 40 %</span><span>Ejendom 20 %</span><span>ParkShare24 40 %</span>
 </div>
 <p style="margin: 0; font-size: 12px; color: #A9AEB6">Regneeksempel. Jeres tal afhænger af beliggenhed, åbningstider og efterspørgsel.</p>
 </div>
@@ -160,7 +160,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 <div style="background: #F3F1EC; color: #121417; border-radius: 16px; padding: 32px">
 <div style="font-size: 15px; color: #4A4F57">Til ejendommen pr. år</div>
 <div style="font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(40px, 5vw, 60px); line-height: 1.05; letter-spacing: -0.02em"><span id="o-owner"></span></div>
-<div style="margin-top: 6px; font-size: 15px; color: #4A4F57">30 % af en omsætning på <span id="o-revenue"></span></div>
+<div style="margin-top: 6px; font-size: 15px; color: #4A4F57">20 % af en omsætning på <span id="o-revenue"></span></div>
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
 <div style="background: #1E2227; border-radius: 14px; padding: 22px">
@@ -179,7 +179,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
 </div>
 <span style="font-size: 14px; color: #D5D8DD; max-width: 220px">ParkShare24 dækker kameraer, app, installation og drift.</span>
 </div>
-<p style="margin: 4px 0 0; font-size: 13px; color: #A9AEB6">Fordeling: lejere 40 %, ejendom 30 %, ParkShare24 30 %. Vejledende beregning – ikke et tilbud.</p>
+<p style="margin: 4px 0 0; font-size: 13px; color: #A9AEB6">Fordeling: lejere 40 %, ejendom 20 %, ParkShare24 40 %. Vejledende beregning – ikke et tilbud.</p>
 </div>
 </div>
 </section>
@@ -310,7 +310,7 @@ input[type=range]{width:100%;accent-color:#1846C8;height:44px;margin:0}
     ids.forEach(function(k){document.getElementById('o-'+k).textContent=v(k);});
     var rev=v('spaces')*v('hours')*(v('occ')/100)*v('price')*365;
     document.getElementById('o-revenue').textContent=kr(rev);
-    document.getElementById('o-owner').textContent=kr(rev*0.3);
+    document.getElementById('o-owner').textContent=kr(rev*0.2);
     document.getElementById('o-tenants').textContent=kr(rev*0.4);
     document.getElementById('o-perTenant').textContent=kr(rev*0.4/v('spaces')/12);
   }

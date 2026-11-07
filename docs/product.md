@@ -1,6 +1,6 @@
 # ParkShare24: product overview
 
-ParkShare24 is a mobile app that lets drivers book and pre-pay for empty spaces in private car parks (residential parking cellars, parking houses, office car parks). ParkShare24 installs license-plate (ANPR) cameras and signs at no cost to the owner, runs the app and operations, and splits booking revenue: **tenants 40 %, owner 30 %, ParkShare24 30 %**.
+ParkShare24 is a mobile app that lets drivers book and pre-pay for empty spaces in private car parks (residential parking cellars, parking houses, office car parks). ParkShare24 installs license-plate (ANPR) cameras and signs at no cost to the owner, runs the app and operations, and splits booking revenue: **tenants 40 %, owner 20 %, ParkShare24 40 %**.
 
 ## Users
 
@@ -18,6 +18,7 @@ ParkShare24 is a mobile app that lets drivers book and pre-pay for empty spaces 
 3. **The owner's list of spaces and tenants is the source of truth.** A tenant can only share a space the owner has linked to them, confirmed with MitID.
 4. **GDPR.** Camera data and in/out logs are personal data. Clear purpose, explicit consent where needed, short retention, clear signage about camera surveillance.
 5. **Subletting needs the owner's consent.** The owner agreement gives it, and tenant contracts are adjusted.
+6. **Always the cheapest in the area.** Parking with us takes a little more effort than the street or a public parking house, so our price must beat theirs for the same time.
 
 ## Flows
 

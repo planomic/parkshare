@@ -27,14 +27,14 @@ Product docs live in `docs/`: start with `docs/product.md` (users, ground rules,
 - Look: warm off-white ground `#F3F1EC`, ink `#121417`, accent blue `#1846C8`, signal yellow `#F5C518`, muted text `#4A4F57`, hairlines `#D9D5CC`. Headings Archivo 700–800 with tight letter-spacing. No gradients, no emoji, no stock photos.
 - Must work at phone width (390 px) without horizontal scroll. Touch targets ≥ 44 px. Real `<button>`, `<a href>`, `<label for>`.
 - Preview locally: `python3 -m http.server 8000`, then open http://localhost:8000.
-- The calculator: inputs `#r-spaces`, `#r-hours`, `#r-occ`, `#r-price`; outputs `#o-*`. Formula: `spaces × empty hours/day × occupancy × hourly price × 365` = yearly revenue. Split: tenants 40 %, owner 30 %, ParkShare24 30 %. If you change the split, change it everywhere (hero card, calculator, its footnote, the bar legend).
+- The calculator: inputs `#r-spaces`, `#r-hours`, `#r-occ`, `#r-price`; outputs `#o-*`. Formula: `spaces × empty hours/day × occupancy × hourly price × 365` = yearly revenue. Split: tenants 40 %, owner 20 %, ParkShare24 40 %. If you change the split, change it everywhere (hero card, calculator, its footnote, the bar legend).
 - Contact form posts to Formspree: `action="https://formspree.io/f/xyeeaddz"`.
 
 ## Open TODOs
 
 - [x] Rebrand the page from "ParkMe" to "ParkShare24" (logo mark, `<title>`, nav, footer, copy).
 - [ ] Replace placeholders: `[kontakt@parkshare24.dk]`, `[telefonnummer]`, `[CVR-nr.]`.
-- [ ] Confirm business terms stated on the page: 0 kr. investment for owners, 40/30/30 split, trial period with free cancellation, equipment removed at no charge.
+- [ ] Confirm business terms stated on the page: 0 kr. investment for owners, 40/20/40 split (tenants/owner/ParkShare24), trial period with free cancellation, equipment removed at no charge.
 - [x] Create the GitHub repo and enable Pages.
 - [ ] Point DNS at GoDaddy (below; domain is Active at Punktum dk since 2026-11-07, waiting for GoDaddy to unlock DNS editing), enable HTTPS, verify the domain under the GitHub profile's Pages settings.
 - [ ] Have a lawyer approve the "Er det lovligt?" FAQ wording before launch.
@@ -57,4 +57,4 @@ Remove the registrar's default parking A/CNAME records on `@` and `www`.
 - Signage must clearly state the parking terms and the camera surveillance. Camera data falls under GDPR.
 - Tenants usually may not sublet their space without the owner's consent; the owner agreement with ParkShare24 must provide that consent and adjust tenant contracts.
 - Precedent used in sales copy: Copenhagen Municipality rents about 2,400 private parking spaces that residents book via the Visitors app.
-- Example numbers used on the page (assumptions, not market data): 60 spaces, 6 empty hours/day, 30 % occupancy, 25 kr./hour → about 985,000 kr. revenue/year, about 295,000 kr. to the owner, about 550 kr./month per tenant.
+- Example numbers used on the page (assumptions, not market data): 60 spaces, 6 empty hours/day, 30 % occupancy, 25 kr./hour → about 985,000 kr. revenue/year, about 197,000 kr. to the owner, about 550 kr./month per tenant.
