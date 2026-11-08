@@ -1,1 +1,3 @@
 `parkshare24-mark.svg` is the logo mark used as the landing page's favicon: a white "P" on `accent` blue (#1846C8), corner radius 8 on a 40-unit square. Next to it, set the name "ParkShare24" in Archivo 800, letter-spacing -0.02em, in `ink`. Minimum mark size 28px (then radius 6). There is no separate wordmark file yet.
+
+Wordmark: "ParkShare" in Archivo 800, then "24" as a tag: `ink` text on `signal` yellow (#F5C518), font-size 0.83em, padding 0 0.2em, radius 0.17em, 0.15em gap after "ParkShare". The tag stays yellow with `ink` text on both light and dark backgrounds. In running text, write the name plainly as "ParkShare24".
